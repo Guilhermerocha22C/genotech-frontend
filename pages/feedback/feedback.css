@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Overpass", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; 
+}
+
+.hidden {
+    display: none;
+}
+
+.three-body {
+    --uib-size: 35px;
+    --uib-speed: 0.8s;
+    --uib-color: #5D3FD3;
+    position: relative;
+    display: inline-block;
+    height: var(--uib-size);
+    width: var(--uib-size);
+    animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
+}
+
+.three-body__dot {
+    position: absolute;
+    height: 100%;
+    width: 30%;
+}
+
+.three-body__dot:after {
+    content: '';
+    position: absolute;
+    height: 0%;
+    width: 100%;
+    padding-bottom: 100%;
+    background-color: var(--uib-color);
+    border-radius: 50%;
+}
+
+.three-body__dot:nth-child(1) {
+    bottom: 5%;
+    left: 0;
+    transform: rotate(60deg);
+    transform-origin: 50% 85%;
+}
+
+.three-body__dot:nth-child(1)::after {
+    bottom: 0;
+    left: 0;
+    animation: wobble1 var(--uib-speed) infinite ease-in-out;
+    animation-delay: calc(var(--uib-speed) * -0.3);
+}
+
+.three-body__dot:nth-child(2) {
+    bottom: 5%;
+    right: 0;
+    transform: rotate(-60deg);
+    transform-origin: 50% 85%;
+}
+
+.three-body__dot:nth-child(2)::after {
+    bottom: 0;
+    left: 0;
+    animation: wobble1 var(--uib-speed) infinite
+        calc(var(--uib-speed) * -0.15) ease-in-out;
+}
+
+.three-body__dot:nth-child(3) {
+    bottom: -5%;
+    left: 0;
+    transform: translateX(116.666%);
+}
+
+.three-body__dot:nth-child(3)::after {
+    top: 0;
+    left: 0;
+    animation: wobble2 var(--uib-speed) infinite ease-in-out;
+}
+
+@keyframes spin78236 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wobble1 {
+    0%, 100% {
+        transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-66%) scale(0.65);
+        opacity: 0.8;
+    }
+}
+
+@keyframes wobble2 {
+    0%, 100% {
+        transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(66%) scale(0.65);
+        opacity: 0.8;
+    }
+}
+
+
+@media (max-width: 48rem) {
+    .loader {
+        padding: 10px; 
+    }
+
+    .three-body {
+        --uib-size: 25px; 
+    }
+}
+
+
+:root {
+    --dark-blue: #3E3955;
+    --light-grey: #7C8798;
+    --medium-grey: #7C8798;
+    --orange: #675B9E;
+    --white: #FFF;
+    --very-dark-blue: #403A5F;
+    --black-gradient: radial-gradient(circle, #433D60 -20%, #1e252e 100%);
+
+}
+
+body {
+    background-color: var(--very-dark-blue);
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: var(--black-gradient);
+    max-width: 412px;
+    padding: 32px;
+    border-radius: 30px;
+}
+
+.estrela {
+    background-color: var(--dark-blue);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+
+.card h1 {
+    color: var(--white);
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #969FAD;
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.botoes button {
+    width: 51px;
+    height: 51px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    border-radius: 50%;
+    border: none;
+    color: var(--white);
+    background-color: var(--dark-blue);
+    transition: all ease-in-out 0.3s;
+}
+
+.botoes button:hover {
+    color: var(--white);
+    background-color: var(--orange);
+    cursor: pointer;
+}
+
+.botoes button:focus {
+    color: var(--white);
+    background-color: var(--light-grey);
+}
+
+.card > a {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    background-color: #8276b8;
+    border: none;
+    border-radius: 22px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white);
+
+    transition: all ease-in-out 0.3s;
+}
+
+.card > a:hover {
+    color: #A095D0;
+    background-color: #EFEDFA;
+    cursor: pointer;
+}
+

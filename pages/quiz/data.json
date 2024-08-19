@@ -1,0 +1,468 @@
+{
+    "quizzes": [
+        {
+            "title": "Estrutura e Função do DNA",
+            "icon": "../../assets/images/icon-dna.svg",
+            "questions": [
+                {
+                    "question": "O que compõe um nucleotídeo do DNA?",
+                    "options": [
+                        "Pentose, ácido fosfórico e bases nitrogenadas.",
+                        "Ribose, ácido nucleico e desoxirribose.",
+                        "Polissacarídios, ácido fosfórico e ribose.",
+                        "Pentose, ácido clorídrico e bases nitrogenadas.",
+                        "Glicídio, ácido fosfórico e bases nitrogenadas."
+                    ],
+                    "answer": "Pentose, ácido fosfórico e bases nitrogenadas."
+                },
+                {
+                    "question": "Qual é a diferença entre DNA e RNA?",
+                    "options": [
+                        "Tipo de pentose e bases nitrogenadas.",
+                        "Fosfato e bases nitrogenadas.",
+                        "Pentose e fosfato.",
+                        "Bases nitrogenadas apenas.",
+                        "Pentose, bases nitrogenadas e fosfato."
+                    ],
+                    "answer": "Tipo de pentose e bases nitrogenadas."
+                },
+                {
+                    "question": "O DNA é uma molécula de fita dupla que:",
+                    "options": [
+                        "Se liga por pontes de enxofre.",
+                        "Se liga por pontes de hidrogênio.",
+                        "Se liga por ligações metálicas.",
+                        "Se liga por ligações iônicas.",
+                        "Se liga por ligações polipeptídicas."
+                    ],
+                    "answer": "Se liga por pontes de hidrogênio."
+                },
+                {
+                    "question": "Qual é a função do DNA nas células?",
+                    "options": [
+                        "Armazenamento de energia.",
+                        "Transporte de substâncias.",
+                        "Síntese de proteínas.",
+                        "Armazenamento de informações genéticas.",
+                        "Regulação do metabolismo celular."
+                    ],
+                    "answer": "Armazenamento de informações genéticas."
+                },
+                {
+                    "question": "O processo de transcrição do DNA resulta na formação de:",
+                    "options": [
+                        "RNA.",
+                        "Proteínas.",
+                        "Lipídios.",
+                        "Polissacarídeos.",
+                        "Carboidratos."
+                    ],
+                    "answer": "RNA."
+                },
+                {
+                    "question": "O DNA mitocondrial é herdado:",
+                    "options": [
+                        "Do pai.",
+                        "Da mãe.",
+                        "De ambos os pais.",
+                        "Dos avós.",
+                        "Dos irmãos."
+                    ],
+                    "answer": "Da mãe."
+                },
+                {
+                    "question": "A replicação do DNA ocorre:",
+                    "options": [
+                        "No citoplasma.",
+                        "No núcleo.",
+                        "Nas mitocôndrias.",
+                        "Nos ribossomos.",
+                        "No retículo endoplasmático."
+                    ],
+                    "answer": "No núcleo."
+                },
+                {
+                    "question": "As bases nitrogenadas no DNA pareiam-se de acordo com a seguinte regra:",
+                    "options": [
+                        "Adenina-Timina e Guanina-Citosina.",
+                        "Adenina-Guanina e Timina-Citosina.",
+                        "Citosina-Timina e Adenina-Guanina.",
+                        "Timina-Guanina e Adenina-Citosina.",
+                        "Guanina-Timina e Citosina-Adenina."
+                    ],
+                    "answer": "Adenina-Timina e Guanina-Citosina."
+                },
+                {
+                    "question": "O DNA se diferencia do RNA porque:",
+                    "options": [
+                        "O DNA tem uma estrutura de fita dupla e o RNA de fita simples.",
+                        "O DNA está no citoplasma e o RNA no núcleo.",
+                        "O DNA é composto de ribose e o RNA de desoxirribose.",
+                        "O DNA tem uracila e o RNA tem timina.",
+                        "O DNA não participa da síntese de proteínas."
+                    ],
+                    "answer": "O DNA tem uma estrutura de fita dupla e o RNA de fita simples."
+                },
+                {
+                    "question": "A estrutura de dupla hélice do DNA foi descrita por:",
+                    "options": [
+                        "Darwin e Lamarck.",
+                        "Crick e Watson.",
+                        "Pasteur e Redi.",
+                        "Gould e Eldredge.",
+                        "Hooke e Leeuwenhoek."
+                    ],
+                    "answer": "Crick e Watson."
+                }
+            ]
+        },
+        {
+            "title": "Herança Genética",
+            "icon": "../../assets/images/icon-chromosome.svg",
+            "questions": [
+                {
+                    "question": "Qual é a relação entre alelos e genes?",
+                    "options": [
+                        "Alelos são versões diferentes de um gene.",
+                        "Alelos são diferentes genes no mesmo cromossomo.",
+                        "Alelos são proteínas expressas por genes.",
+                        "Alelos são mutações genéticas.",
+                        "Alelos não estão relacionados a genes."
+                    ],
+                    "answer": "Alelos são versões diferentes de um gene."
+                },
+                {
+                    "question": "O fenótipo de um indivíduo é determinado:",
+                    "options": [
+                        "Exclusivamente pelo ambiente.",
+                        "Exclusivamente pelo genótipo.",
+                        "Pela interação entre genótipo e ambiente.",
+                        "Pelo comportamento dos pais.",
+                        "Pelo tipo de alimentação."
+                    ],
+                    "answer": "Pela interação entre genótipo e ambiente."
+                },
+                {
+                    "question": "O que caracteriza a dominância incompleta?",
+                    "options": [
+                        "Um alelo não é completamente dominante sobre o outro.",
+                        "Ambos os alelos são expressos igualmente.",
+                        "Um alelo é completamente dominante sobre o outro.",
+                        "Nenhum dos alelos é expresso.",
+                        "O fenótipo é uma mistura dos alelos."
+                    ],
+                    "answer": "Um alelo não é completamente dominante sobre o outro."
+                },
+                {
+                    "question": "A lei da segregação independente de Mendel se aplica a:",
+                    "options": [
+                        "Genes que estão no mesmo cromossomo.",
+                        "Genes que estão em cromossomos diferentes.",
+                        "Genes que são sempre dominantes.",
+                        "Genes que nunca se recombinam.",
+                        "Genes que causam doenças genéticas."
+                    ],
+                    "answer": "Genes que estão em cromossomos diferentes."
+                },
+                {
+                    "question": "No cruzamento entre dois heterozigotos Aa, a proporção fenotípica esperada é:",
+                    "options": [
+                        "3:1.",
+                        "1:1.",
+                        "1:2:1.",
+                        "9:3:3:1.",
+                        "2:2."
+                    ],
+                    "answer": "3:1."
+                },
+                {
+                    "question": "A herança ligada ao sexo é caracterizada por:",
+                    "options": [
+                        "Genes localizados em cromossomos autossômicos.",
+                        "Genes localizados em cromossomos sexuais.",
+                        "Genes que não sofrem mutações.",
+                        "Genes que estão sempre dominantes.",
+                        "Genes que se recombinam frequentemente."
+                    ],
+                    "answer": "Genes localizados em cromossomos sexuais."
+                },
+                {
+                    "question": "O daltonismo é um exemplo de:",
+                    "options": [
+                        "Herança autossômica dominante.",
+                        "Herança autossômica recessiva.",
+                        "Herança ligada ao sexo.",
+                        "Herança mitocondrial.",
+                        "Herança multifatorial."
+                    ],
+                    "answer": "Herança ligada ao sexo."
+                },
+                {
+                    "question": "A probabilidade de um casal AaBb ter um filho AABB é:",
+                    "options": [
+                        "1/4.",
+                        "1/16.",
+                        "1/8.",
+                        "1/2.",
+                        "1/32."
+                    ],
+                    "answer": "1/16."
+                },
+                {
+                    "question": "O que é pleiotropia?",
+                    "options": [
+                        "Um gene influencia vários fenótipos.",
+                        "Vários genes influenciam um fenótipo.",
+                        "Um gene não tem efeito fenotípico.",
+                        "Genes se recombinam frequentemente.",
+                        "Nenhum dos acima."
+                    ],
+                    "answer": "Um gene influencia vários fenótipos."
+                },
+                {
+                    "question": "Em uma árvore genealógica, um quadrado cheio representa:",
+                    "options": [
+                        "Homem afetado.",
+                        "Mulher afetada.",
+                        "Homem não afetado.",
+                        "Mulher não afetada.",
+                        "Parentesco desconhecido."
+                    ],
+                    "answer": "Homem afetado."
+                }
+            ]
+        },
+        {
+            "title": "Engenharia Genética",
+            "icon": "../../assets/images/icon-biology.svg",
+            "questions": [
+                {
+                    "question": "A técnica de PCR é utilizada para:",
+                    "options": [
+                        "Clonar genes.",
+                        "Sequenciar DNA.",
+                        "Ampliar fragmentos de DNA.",
+                        "Editar genes.",
+                        "Inserir genes em organismos."
+                    ],
+                    "answer": "Ampliar fragmentos de DNA."
+                },
+                {
+                    "question": "O CRISPR-Cas9 é uma ferramenta usada para:",
+                    "options": [
+                        "Clonar organismos.",
+                        "Modificar sequências específicas de DNA.",
+                        "Ampliar DNA.",
+                        "Sequenciar genomas.",
+                        "Analisar proteínas."
+                    ],
+                    "answer": "Modificar sequências específicas de DNA."
+                },
+                {
+                    "question": "A insulina humana produzida por bactérias transgênicas é um exemplo de:",
+                    "options": [
+                        "Terapia gênica.",
+                        "Engenharia de proteínas.",
+                        "Biotecnologia.",
+                        "Sequenciamento genético.",
+                        "Clonagem reprodutiva."
+                    ],
+                    "answer": "Biotecnologia."
+                },
+                {
+                    "question": "A clonagem de organismos é um processo que:",
+                    "options": [
+                        "Cria organismos geneticamente idênticos.",
+                        "Insere novos genes em organismos.",
+                        "Altera genes existentes em organismos.",
+                        "Amplia fragmentos de DNA.",
+                        "Sequencia genomas."
+                    ],
+                    "answer": "Cria organismos geneticamente idênticos."
+                },
+                {
+                    "question": "A terapia gênica visa:",
+                    "options": [
+                        "Curar doenças genéticas.",
+                        "Melhorar características físicas.",
+                        "Sequenciar DNA.",
+                        "Ampliar DNA.",
+                        "Editar proteínas."
+                    ],
+                    "answer": "Curar doenças genéticas."
+                },
+                {
+                    "question": "O que é um organismo geneticamente modificado (OGM)?",
+                    "options": [
+                        "Um organismo com genes de outra espécie.",
+                        "Um organismo com mutações naturais.",
+                        "Um organismo clonado.",
+                        "Um organismo com DNA não modificado.",
+                        "Um organismo com genes deletados."
+                    ],
+                    "answer": "Um organismo com genes de outra espécie."
+                },
+                {
+                    "question": "A bioinformática é usada em genética para:",
+                    "options": [
+                        "Analisar grandes volumes de dados genômicos.",
+                        "Clonar genes.",
+                        "Sequenciar proteínas.",
+                        "Editar genes.",
+                        "Produzir insulina."
+                    ],
+                    "answer": "Analisar grandes volumes de dados genômicos."
+                },
+                {
+                    "question": "A técnica de eletroforese em gel é usada para:",
+                    "options": [
+                        "Clonar genes.",
+                        "Separar fragmentos de DNA.",
+                        "Sequenciar DNA.",
+                        "Ampliar DNA.",
+                        "Editar genes."
+                    ],
+                    "answer": "Separar fragmentos de DNA."
+                },
+                {
+                    "question": "A técnica de Southern blot é utilizada para:",
+                    "options": [
+                        "Detectar DNA específico em uma amostra.",
+                        "Clonar genes.",
+                        "Editar genes.",
+                        "Ampliar DNA.",
+                        "Sequenciar proteínas."
+                    ],
+                    "answer": "Detectar DNA específico em uma amostra."
+                },
+                {
+                    "question": "A transformação genética em bactérias é um processo que:",
+                    "options": [
+                        "Insere DNA exógeno em uma célula bacteriana.",
+                        "Clona organismos.",
+                        "Sequencia genomas.",
+                        "Edita proteínas.",
+                        "Amplia DNA."
+                    ],
+                    "answer": "Insere DNA exógeno em uma célula bacteriana."
+                }
+            ]
+        },
+        {
+            "title": "Evolução Molecular",
+            "icon": "../../assets/images/icon-molecules.svg",
+            "questions": [
+                {
+                    "question": "A teoria neutralista da evolução molecular sugere que:",
+                    "options": [
+                        "Todas as mutações são benéficas.",
+                        "Todas as mutações são deletérias.",
+                        "A maioria das mutações são neutras e não afetam a aptidão.",
+                        "As mutações não ocorrem.",
+                        "A seleção natural não é importante na evolução molecular."
+                    ],
+                    "answer": "A maioria das mutações são neutras e não afetam a aptidão."
+                },
+                {
+                    "question": "A substituição sinônima em uma sequência de DNA é:",
+                    "options": [
+                        "Uma mutação que não altera a sequência de aminoácidos de uma proteína.",
+                        "Uma mutação que altera a sequência de aminoácidos de uma proteína.",
+                        "Uma mutação que interrompe a tradução da proteína.",
+                        "Uma mutação que insere um novo aminoácido.",
+                        "Uma mutação que exclui um aminoácido."
+                    ],
+                    "answer": "Uma mutação que não altera a sequência de aminoácidos de uma proteína."
+                },
+                {
+                    "question": "A análise de relógio molecular é usada para:",
+                    "options": [
+                        "Sequenciar genomas.",
+                        "Estimar tempos de divergência entre espécies.",
+                        "Clonar genes.",
+                        "Editar sequências de DNA.",
+                        "Produzir proteínas recombinantes."
+                    ],
+                    "answer": "Estimar tempos de divergência entre espécies."
+                },
+                {
+                    "question": "O efeito de um gargalo populacional na variação genética é:",
+                    "options": [
+                        "Aumento da variação genética.",
+                        "Redução da variação genética.",
+                        "Estabilidade da variação genética.",
+                        "Aumento da mutação benéfica.",
+                        "Redução da mutação deletéria."
+                    ],
+                    "answer": "Redução da variação genética."
+                },
+                {
+                    "question": "A convergência evolutiva ocorre quando:",
+                    "options": [
+                        "Espécies próximas divergem.",
+                        "Espécies distantes evoluem características semelhantes.",
+                        "Espécies divergem devido a mutações.",
+                        "A seleção natural não atua em duas espécies.",
+                        "Espécies próximas têm características completamente diferentes."
+                    ],
+                    "answer": "Espécies distantes evoluem características semelhantes."
+                },
+                {
+                    "question": "A duplicação gênica é importante na evolução porque:",
+                    "options": [
+                        "Reduz a complexidade do genoma.",
+                        "Cria novas oportunidades para a evolução de novas funções gênicas.",
+                        "Remove genes deletérios.",
+                        "Diminui a variação genética.",
+                        "Não tem impacto na evolução."
+                    ],
+                    "answer": "Cria novas oportunidades para a evolução de novas funções gênicas."
+                },
+                {
+                    "question": "O que são genes homeobox?",
+                    "options": [
+                        "Genes que regulam o desenvolvimento anatômico.",
+                        "Genes que codificam proteínas de membrana.",
+                        "Genes que são sempre deletérios.",
+                        "Genes encontrados apenas em plantas.",
+                        "Genes sem função conhecida."
+                    ],
+                    "answer": "Genes que regulam o desenvolvimento anatômico."
+                },
+                {
+                    "question": "O que é evolução molecular adaptativa?",
+                    "options": [
+                        "Evolução sem mudanças no DNA.",
+                        "Evolução onde mutações benéficas são favorecidas pela seleção natural.",
+                        "Evolução onde todas as mutações são neutras.",
+                        "Evolução que não depende de mutações.",
+                        "Evolução que ocorre apenas em organismos unicelulares."
+                    ],
+                    "answer": "Evolução onde mutações benéficas são favorecidas pela seleção natural."
+                },
+                {
+                    "question": "A técnica de comparação de sequências de DNA pode ser usada para:",
+                    "options": [
+                        "Determinar relações evolutivas entre espécies.",
+                        "Clonar organismos.",
+                        "Produzir proteínas recombinantes.",
+                        "Sequenciar proteínas.",
+                        "Editar genes."
+                    ],
+                    "answer": "Determinar relações evolutivas entre espécies."
+                },
+                {
+                    "question": "A deriva genética tem maior impacto em populações:",
+                    "options": [
+                        "Grandes.",
+                        "Pequenas.",
+                        "Com alta variação genética.",
+                        "Sem variação genética.",
+                        "Com fluxo gênico constante."
+                    ],
+                    "answer": "Pequenas."
+                }
+            ]
+        }
+    ]
+}
