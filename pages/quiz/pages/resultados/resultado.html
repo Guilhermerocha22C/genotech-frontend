@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/pages/quiz/pages/resultados/resultado.css">
+    <link rel="icon" href="/Ico pages/resultados.ico" type="image/x-icon">
     <script src="/pages/quiz/pages/resultados/resultado.js" type="module" defer></script>
     <title>Geno Quiz - Resultados</title>
 </head>
@@ -49,15 +50,34 @@
         </section>
         <div>
         <button>Jogar novamente</button>
-        <button class="sair">Sair</button>
+        <button class="sair" id="abrir-popup">Sair</button> 
         </div>
     </div>
     </main>
+
+    <div class="popup" id="popup" style="display: none;">
+        <div class="popup-conteudo">
+            <p>Deseja voltar para a home ou ir para a página de conteúdos?</p>
+            <button onclick="window.location.href='/index.html'">Voltar para a Home</button>
+            <button onclick="window.location.href='/pages/Assuntos-pagina/assuntos-pagina.html'">Ir para a Página de Conteúdos</button>
+            <button id="fechar-popup">Cancelar</button>
+        </div>
+    </div>
 
     <script>
         window.addEventListener('load', function() {
             document.getElementById('loader').style.display = 'none';
         });
+
+        document.getElementById('abrir-popup').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            document.getElementById('popup').style.display = 'flex';
+        });
+
+        document.getElementById('fechar-popup').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+        });
     </script>
+
 </body>
 </html>
