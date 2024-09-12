@@ -11,7 +11,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Geno Tech - Home</title>
 </head>
 
@@ -27,7 +29,7 @@
 
     <div class="mae">
         <header>
-            <div class="cabecalho">
+            <div class="cabecalho" data-aos="fade-up" data-aos-delay="300">
                 <div id="img-logo-header">
                     <img class="logo" src="./Assets home/Logo.svg" alt="Logo Geno Tech">
                 </div>
@@ -46,7 +48,7 @@
             </div>
 
             <div class="conteudo-header2">
-                <div class="conteudo-esq">
+                <div class="conteudo-esq" data-aos="flip-left">
                     <h1>
                         <strong>Aprenda</strong> Genética<br>
                         Com <strong>Geno Tech</strong>
@@ -60,19 +62,19 @@
                         genética acessível e interessante.
                     </p>
 
-                    <div>
+                    <div data-aos="fade-right">
                         <a href="/pages/Assuntos-pagina/assuntos-pagina.html">APRENDA AGORA</a>
                         <img src="./Assets home/shape.svg" alt="Img vetor seta">
                     </div>
                 </div>
 
-                <div class="img-dir">
+                <div class="img-dir" data-aos="fade-left" data-aos-delay="150">
                     <img src="./Assets home/dna3d(1).svg" alt="Dna 3D home">
                 </div>
             </div>
         </header>
 
-        <div class="transicao">
+        <div class="transicao" data-aos="fade-down" data-aos-delay="300">
             <div class="artigos">
                 <div>
                     <img src="./Assets home/livro-vetor.svg" alt="Img Artigos Educativos">
@@ -110,21 +112,21 @@
 
             <div class="esq-primeira-secao">
                 <div class="alinhamento">
-                    <h1>
+                    <h1 data-aos="fade-up-right">
                         <strong>INTRODUÇÃO</strong><br>
                         À GENÉTICA
                     </h1>
 
-                    <img src="./Assets home/Group 388.svg" alt="">
+                    <img data-aos="fade-up-right" data-aos-delay="300" src="./Assets home/Group 388.svg" alt="">
                 </div>
 
                 <div>
-                    <img class="bordaImg1secao" src="./Assets home/cromossomos-nucleo-celular 1.svg"
+                    <img data-aos="fade-up" data-aos-delay="150" class="bordaImg1secao" src="./Assets home/cromossomos-nucleo-celular 1.svg"
                         alt="Img Cromossomo home">
                 </div>
             </div>
 
-            <div class="dir-primeira-secao" id="dir-primeira-secao">
+            <div class="dir-primeira-secao" id="dir-primeira-secao" data-aos="fade-left" data-aos-delay="250">
                 <p>
                     A <strong>genética</strong> é a ciência que estuda os genes, a<br>
                     hereditariedade e a variação nos organismos. Nossa<br>
@@ -150,7 +152,7 @@
 
         <div class="segunda-secao">
 
-            <div class="cima-segunda-secao">
+            <div class="cima-segunda-secao" data-aos="fade-down-left" data-aos-delay="100">
                 <h1><strong>POR QUE ESTUDAR</strong><br>
                     COM A <Strong>GENO TECH</Strong></h1>
                 <img src="./Assets home/Group 388.svg" alt="">
@@ -168,7 +170,7 @@
 
             <div class="cards-segunda-secao">
 
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem;" data-aos="fade-up" data-aos-delay="150">
 
                     <img src="./Assets home/SIMULAÇÃO 3D 1.svg" class="card-img-top" alt="Img simulaçoes 3d">
 
@@ -183,7 +185,7 @@
 
                 </div>
 
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem;" data-aos="fade-down" data-aos-delay="200">
 
                     <img src="./Assets home/Educação.svg" class="card-img-top" alt="Img simulaçoes 3d">
 
@@ -197,7 +199,7 @@
 
                 </div>
 
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem;" data-aos="fade-up" data-aos-delay="300">
 
                     <img src="./Assets home/Discord.svg" class="card-img-top" alt="Img simulaçoes 3d">
 
@@ -212,7 +214,7 @@
 
                 </div>
 
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem;" data-aos="fade-down" data-aos-delay="400">
 
                     <img src="./Assets home/Recursos Interativos (1).svg" class="card-img-top" alt="Img simulaçoes 3d">
 
@@ -229,7 +231,7 @@
 
             </div>
 
-            <div class="preview-3d">
+            <div class="preview-3d" data-aos="zoom-in-left" data-aos-delay="500">
                 <h2>Aprenda em 3D</h2>
                 <button onclick="window.location.href='/pages/3D/examples/TabelaPeriodica3D.html'">Ver em 3D</button>
             </div>
@@ -240,7 +242,7 @@
 
             <div class="inicio-terceira-secao">
 
-                <div class="ladoEsq-terceira-secao">
+                <div class="ladoEsq-terceira-secao" data-aos="fade-left" data-aos-delay="200">
                     <h1>
                         COMO APRENDEMOS<br>
                         COM A <strong>GENO TECH?</strong>
@@ -249,7 +251,7 @@
                     <img src="./Assets home/Group 388.svg" alt="">
                 </div>
 
-                <div class="ladoDir-terceira-secao">
+                <div class="ladoDir-terceira-secao" data-aos="fade-up" data-aos-delay="150">
                     <p>
                         Nosso processo de aprendizado é projetado para ser<br>
                         acessível e eficaz, garantindo que você possa<br>
@@ -265,7 +267,7 @@
                     <div>01</div>
 
                     <div id="alinhamento2">
-                        <img src="./Assets home/shape.svg" alt="Vetor seta">
+                        <img data-aos="fade-down-right" data-aos-delay="150" src="./Assets home/shape.svg" alt="Vetor seta">
 
                         <p>
                             Fundamentos e<br> Introdução à Genética
@@ -277,7 +279,7 @@
                     <div>02</div>
 
                     <div id="alinhamento2">
-                        <img src="./Assets home/shape.svg" alt="Vetor seta">
+                        <img data-aos="fade-down-left" data-aos-delay="250" src="./Assets home/shape.svg" alt="Vetor seta">
 
                         <p>
                             Exploração de Tópicos<br> Avançados
@@ -289,7 +291,7 @@
                     <div>03</div>
 
                     <div id="alinhamento2">
-                        <img src="./Assets home/shape.svg" alt="Vetor seta">
+                        <img data-aos="fade-down-right" data-aos-delay="350" src="./Assets home/shape.svg" alt="Vetor seta">
 
                         <p>
                             Atividades Interativas e<br> Práticas
@@ -301,7 +303,7 @@
                     <div>04</div>
 
                     <div id="alinhamento2">
-                        <img src="./Assets home/shape.svg" alt="Vetor seta">
+                        <img  data-aos="fade-down-left" data-aos-delay="450" src="./Assets home/shape.svg" alt="Vetor seta">
 
                         <p>
                             Avaliações e Feedback<br> Contínuos
@@ -312,7 +314,7 @@
 
             <div class="final-terceira-secao">
 
-                <div class="form-container" id="form-container">
+                <div class="form-container" id="form-container" data-aos="flip-right" data-aos-delay="450">
 
                     <h1>JUNTE-SE À GENO TECH</h1>
                     <img src="./Assets home/Vector 16.svg" alt="">
@@ -339,7 +341,7 @@
         </div>
 
         <footer>
-            <div class="footer-container">
+            <div class="footer-container" data-aos="zoom-in-up" data-aos-delay="200">
                 <div class="footer-left">
                     <a href="./index.html"><img src="./Assets home/Logo.svg" alt="Logo Geno Tech" class="footer-logo"></a>
                 </div>
@@ -404,6 +406,7 @@
         });
     </script>
     
+    <script src="script.js" defer></script>
 </body>
 </html>
 
