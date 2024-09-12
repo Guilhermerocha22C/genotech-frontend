@@ -33,7 +33,7 @@
                 </div>
 
                 <div id="conteudo-header">
-                    <a href="">SOBRE NÓS</a>
+                    <a href="./pages/SobreNos/SobreNos.html" id="about-us">SOBRE NÓS</a>
                     <a href="/pages/Assuntos-pagina/assuntos-pagina.html">CONTEÚDOS</a>
                     <a href="/pages/quiz/quizHome.html">QUIZ</a>
                     <a href="/pages/3D/examples/Moleculas3D.html">GENÉTICA 3D</a>
@@ -41,7 +41,7 @@
 
                 <div class="ancoras-header">
                     <a href="">ENTRAR EM CONTATO</a>
-                    <a href="">JUNTE-SE</a>
+                    <a href="" id="join-us">JUNTE-SE</a>
                 </div>
             </div>
 
@@ -124,7 +124,7 @@
                 </div>
             </div>
 
-            <div class="dir-primeira-secao">
+            <div class="dir-primeira-secao" id="dir-primeira-secao">
                 <p>
                     A <strong>genética</strong> é a ciência que estuda os genes, a<br>
                     hereditariedade e a variação nos organismos. Nossa<br>
@@ -312,7 +312,7 @@
 
             <div class="final-terceira-secao">
 
-                <div class="form-container">
+                <div class="form-container" id="form-container">
 
                     <h1>JUNTE-SE À GENO TECH</h1>
                     <img src="./Assets home/Vector 16.svg" alt="">
@@ -322,15 +322,9 @@
 
                         <div class="form-group">
                             <input type="text" class="input-half" placeholder="&nbsp;&nbsp;Primeiro Nome">
-                            <input type="email" class="input-half" placeholder="&nbsp;&nbsp;Email">
-                            <input type="text" class="input-half" placeholder="&nbsp;&nbsp;Sobrenome">
+                            <input type="email" class="input-half" placeholder="&nbsp;&nbsp;Sobrenome">
+                            <input type="text" class="input-half" placeholder="&nbsp;&nbsp;Email">
                             <input type="number" class="input-half" placeholder="&nbsp;&nbsp;Número de telefone">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="&nbsp;&nbsp;Email">
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="&nbsp;&nbsp;Número de Telefone">
                         </div>
                         <div class="form-group">
                             <input type="text" placeholder="&nbsp;&nbsp;Assunto">
@@ -347,21 +341,21 @@
         <footer>
             <div class="footer-container">
                 <div class="footer-left">
-                    <img src="./Assets home/Logo.svg" alt="Logo Geno Tech" class="footer-logo">
+                    <a href="./index.html"><img src="./Assets home/Logo.svg" alt="Logo Geno Tech" class="footer-logo"></a>
                 </div>
                 <img src="./Assets home/Vector 22.svg" alt="">
                 <div class="footer-center">
                     <ul class="footer-links">
-                        <li><a href="#">SOBRE NÓS</a></li>
+                        <li><a href="./pages/SobreNos/SobreNos.html" id="sobre-nos">SOBRE NÓS</a></li>
                         <li><a href="/pages/Assuntos-pagina/assuntos-pagina.html">CONTEÚDOS</a></li>
                         <li><a href="/pages/3D/examples/Moleculas3D.html">GENÉTICA 3D</a></li>
-                        <li><a href="#">JUNTE-SE</a></li>
+                        <li><a href="#" id="junte">JUNTE-SE</a></li>
                         <li><a href="/pages/quiz/quizHome.html">QUIZ</a></li>
                     </ul>
                     <img src="./Assets home/Vector 22.svg" alt="">
                     <ul class="footer-links">
                         <li><a href="/pages/Faqs/faq.html">F.A.Q</a></li>
-                        <li><a href="#">SITEMAP</a></li>
+                        <li><a href="https://www.edrawmind.com/online/map.html?sharecode=66e1d44d42a581a76427032">SITEMAP</a></li>
                     </ul>
                 </div>
                 <img src="./Assets home/Vector 22.svg" alt="">
@@ -393,6 +387,23 @@
             document.getElementById('loader').style.display = 'none';
         });
     </script>
+    <script>
+        document.getElementById('join-us').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            document.getElementById('form-container').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+    </script>
+    <script>
+        document.getElementById('junte').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            document.getElementById('form-container').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+    </script>
+    
 </body>
-
 </html>
+

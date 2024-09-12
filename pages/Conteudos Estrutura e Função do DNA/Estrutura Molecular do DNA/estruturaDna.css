@@ -305,3 +305,23 @@ input:checked + .slider:before {
 .img_2 {
     border: none;
 }
+
+.img_2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.img_2 button{
+    border: none;
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    padding: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    border-radius: 144px;
+    width: 30%;
+    margin: 30px 215px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}

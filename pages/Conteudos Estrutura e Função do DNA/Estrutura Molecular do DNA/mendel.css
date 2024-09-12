@@ -319,4 +319,5 @@ input:checked + .slider:before {
     width: 30%;
     margin: 30px 215px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
 }

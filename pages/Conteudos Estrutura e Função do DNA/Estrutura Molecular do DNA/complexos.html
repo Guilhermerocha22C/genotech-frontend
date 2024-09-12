@@ -19,16 +19,15 @@
         <header>
             <div class="header">
                 <div class="logo">
-                    <img id="logo" src="./Assets/Logo.svg" alt="Geno Tech Logo">
+                    <a href="/index.html"><img id="logo" src="./Assets/Logo.svg" alt="Geno Tech Logo"></a>
                 </div>
                 <div class="nav">
                     <a href="/index.html" class="active">INÍCIO</a>
                     <a href="/pages/Assuntos-pagina/assuntos-pagina.html">CONTEÚDOS</a>
                     <a href="/pages/quiz/quizHome.html">QUIZ</a>
-                    <a href="#">VÍDEOS</a>
                 </div>
                 <div class="toggle-container">
-                    <span class="toggle-label">Tema Escuro</span>
+                    <span class="toggle-label"></span>
                     <label class="toggle-switch">
                         <input type="checkbox">
                         <span class="slider"></span>
@@ -108,7 +107,7 @@
                 </div>
             </div>
             <div class="img_2">
-                <button>Voltar ao Topo</button>
+                <button id="voltarTopo">Voltar ao Topo</button>
             </div>
     </div>
 
@@ -116,6 +115,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const toggleSwitch = document.querySelector('.toggle-switch input');
             const logo = document.getElementById('logo');
+            const voltarTopoButton = document.getElementById('voltarTopo'); 
     
             function updateLogo() {
                 if (toggleSwitch.checked) {
@@ -130,6 +130,13 @@
             toggleSwitch.addEventListener('change', function() {
                 document.body.classList.toggle('light-theme', toggleSwitch.checked);
                 updateLogo();
+            });
+    
+            voltarTopoButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' 
+                });
             });
         });
     </script>

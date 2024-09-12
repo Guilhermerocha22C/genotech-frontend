@@ -3,7 +3,7 @@ const userInput = document.getElementById('user-input');
 
 const responses = {
     1: "Acesse a aba FAQ no menu do site para ver as perguntas frequentes e suas respostas.",
-    2: "Você pode explorar tanto a Tabela Periódica quanto as moléculas em 3D na aba Elementos 3D do nosso site. Lá, você encontrará uma visualização interativa da Tabela Periódica e poderá ver modelos 3D detalhados de várias moléculas.",
+    2: "Você pode explorar tanto a Tabela Periódica quanto as moléculas em 3D na aba Genética 3D do nosso site. Lá, você encontrará uma visualização interativa da Tabela Periódica e poderá ver modelos 3D detalhados de várias moléculas.",
     3: "Para suporte, você pode entrar em contato conosco através do e-mail suporte@genotech.com ou utilizar o formulário de contato disponível na seção Fale Conosco do site.",
     4: "Por favor, descreva sua dúvida e iremos ajudá-lo o mais rápido possível."
 };

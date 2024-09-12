@@ -1,11 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
 body {
-    font-family: "Montserrat", sans-serif;
+    background-color: #2b1f3d;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #2d2a5d; 
+    overflow-x: auto;
 }
 
 .logo {
@@ -152,152 +158,116 @@ body {
     }
 }
 
-
-.chat-container {
-    background-color: rgba(31, 27, 69, 0.9); 
-    width: 400px; 
-    height: 600px; 
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.card-container {
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    flex-wrap: nowrap;
+    gap: 16px; 
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    to {
+.card {
+    background-color: #2d253d;
+    width: 280px; 
+    padding: 24px; 
+    text-align: center;
+    border-radius: 12px;
+    animation: levitar 3s ease-in-out infinite;
+}
+
+@keyframes levitar {
+    0% {
         transform: translateY(0);
-        opacity: 1;
+    }
+    50% {
+        transform: translateY(-10px); 
+    }
+    100% {
+        transform: translateY(0); 
     }
 }
 
-.chat-container {
-    animation: slideIn 0.6s ease-out;
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-
-.chat-header {
-    background-color: #6c63ff; 
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.bot-info {
-    display: flex;
-    align-items: center;
-}
-
-.bot-photo {
-    width: 40px; 
-    height: 40px; 
-    border-radius: 50%; 
-    margin-right: 10px; 
-    border: 1px dashed rgb(66, 0, 128);
-}
-
-.verified-icon {
-    margin-left: 5px;
-    font-size: 1.2em;
-}
-
-.verified-icon img {
-    width: 20px; 
-    height: 20px;
-}
-
-.clear-button {
-    background-color: #ff4c4c; 
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+.card img {
+    border-radius: 50%;
+    width: 90px; 
+    height: 90px;
+    margin-bottom: 16px;
+    object-fit: cover;
     cursor: pointer;
 }
 
-.chat-box {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
+.card h1, .card p, .card a {
+    color: #fff;
 }
 
-.chat-message {
-    margin-bottom: 10px;
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
+.card h1 {
+    font-size: 18px; 
+    line-height: 28px; 
+    font-weight: 600;
+    margin-bottom: 4px; 
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+.card strong {
+    color: #a65bd8;
+    font-size: 12px; 
+    line-height: 18px; 
 }
 
-.bot-message {
-    background-color: #4c4a9c; 
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: left;
+.card p {
+    margin-block: 16px; 
+    font-size: 12px; 
+    line-height: 18px; 
 }
 
-.user-message {
-    background-color: #6c63ff; 
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: right;
+.card a {
+    display: block;
+    text-decoration: none;
+    background-color: #593785;
+    padding: 10px; 
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 12px; 
+    line-height: 18px; 
+    margin-top: 8px; 
 }
 
-.input-box {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #4c4a9c; 
+.card a:hover {
+    background-color: #8378b4;
+    color: #141414;
+    transition: 0.8s;
 }
 
-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #4c4a9c; 
-    border-radius: 5px;
-    background-color: #2d2a5d; 
-    color: white;
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
-button {
-    background-color: #6c63ff; 
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    margin-left: 10px;
+.modal-content {
+    max-width: 90%; 
+    max-height: 80%; 
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
     cursor: pointer;
 }
 
-.options {
-    display: flex;
-    flex-direction: column;
-}
-
-.options button {
-    background-color: #8e8ed1; 
-    color: #333;
-    border: none;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: left;
-}
-
-.options button:hover {
-    background-color: #7a7acd;
-}
 
 
