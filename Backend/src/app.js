@@ -49,14 +49,15 @@ const con = mysql.createConnection({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
     port: process.env.DB_PORT,
-      charset: 'utf8mb4'
+      charset: 'utf8mb4',
+      connectTimeout: 10000
 });
 
 // Estabelecer conexão com o banco de dados
 con.connect((err) => {
     if (err) {
         console.error('Erro ao conectar ao banco de dados:', err);
-        return;
+        process.exit(1);
     }
     console.log('Conexão com o banco de dados estabelecida!');
 });
@@ -466,6 +467,10 @@ app.get('/api/ranking', (req, res) => {
         console.log('Resultados do ranking:', ranking);
         res.json({ success: true, ranking });
     });
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../Frontend/index.html'));
 });
 
 // Middleware para lidar com rotas não encontradas (404)
