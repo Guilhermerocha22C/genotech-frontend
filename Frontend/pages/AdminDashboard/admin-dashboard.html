@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1><i class="fas fa-chart-line"></i> Dashboard Admin</h1>
+            <button id="logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </header>
+        <nav>
+            <button id="viewUsers"><i class="fas fa-users"></i> Usuários</button>
+        </nav>
+        <main id="content">
+            <!-- Conteúdo dinâmico -->
+        </main>
+        <div id="chartContainer" style="display:none;">
+            <canvas id="userChart"></canvas>
+        </div>
+    </div>
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./ranking.css">
+    <link rel="icon" href="/Ico pages/resultados.ico" type="image/x-icon">
+    <script src="./ranking.js" type="module" defer></script>
+    <title>Geno Quiz - Ranking</title>
+</head>
+<body>
+
+    <div class="loader" id="loader">
+        <div class="three-body">
+            <div class="three-body__dot"></div>
+            <div class="three-body__dot"></div>
+            <div class="three-body__dot"></div>
+        </div>
+    </div>
+
+    <a href="#" class="fechar-button" id="abrir-popup">
+        <img src="/Frontend/pages/feedback/images/cross 1.svg" alt="Close">
+    </a>
+
+    <div class="popup" id="popup">
+        <div class="popup-conteudo">
+            <p>Deseja voltar para a home ou ir para a página de conteúdos?</p>
+            <button onclick="window.location.href='/Frontend/index.html'">Voltar para a Home</button>
+            <button onclick="window.location.href='/Frontend/pages/Assuntos-pagina/assuntos-pagina.html'">Ir para a Página de Conteúdos</button>
+            <button id="fechar-popup">Cancelar</button>
+        </div>
+    </div>
+    
+    <header>
+        <div class="tema">
+            <img src="/Frontend/pages/quiz/assets/images/icon-sun-dark.svg" alt="Ícone do Sol">
+            <button>
+                <div></div>
+            </button>
+            <img src="/Frontend/pages/quiz/assets/images/icon-moon-dark.svg" alt="Ícone da Lua">
+        </div>
+    </header>
+
+    <main>
+        <h2>Ranking <br>
+            <strong>Dos Jogadores:</strong>
+        </h2>
+
+        <div class="ranking">
+            <ul class="ranking-list">
+                <!-- ranking dinâmico -->
+            </ul>
+        </div>
+    </main>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            document.getElementById('loader').style.display = 'none';
+        });
+
+        document.getElementById('abrir-popup').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            document.getElementById('popup').style.display = 'flex';
+        });
+
+        document.getElementById('fechar-popup').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

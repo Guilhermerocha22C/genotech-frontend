@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Molécula 3D</title>
+    <link type="text/css" rel="stylesheet" href="main.css">
+    <link rel="icon" href="/Ico pages/3d-model.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+
+       * {
+        cursor: grab
+       }
+
+      body {
+        background-color: #050505;
+        background: radial-gradient(ellipse at center,  #302C42 0%,rgba(0,0,0,1) 100%);
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, sans-serif;
+      }
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; 
+}
+
+.hidden {
+    display: none;
+}
+
+.three-body {
+    --uib-size: 35px;
+    --uib-speed: 0.8s;
+    --uib-color: #5D3FD3;
+    position: relative;
+    display: inline-block;
+    height: var(--uib-size);
+    width: var(--uib-size);
+    animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
+}
+
+.three-body__dot {
+    position: absolute;
+    height: 100%;
+    width: 30%;
+}
+
+.three-body__dot:after {
+    content: '';
+    position: absolute;
+    height: 0%;
+    width: 100%;
+    padding-bottom: 100%;
+    background-color: var(--uib-color);
+    border-radius: 50%;
+}
+
+.three-body__dot:nth-child(1) {
+    bottom: 5%;
+    left: 0;
+    transform: rotate(60deg);
+    transform-origin: 50% 85%;
+}
+
+.three-body__dot:nth-child(1)::after {
+    bottom: 0;
+    left: 0;
+    animation: wobble1 var(--uib-speed) infinite ease-in-out;
+    animation-delay: calc(var(--uib-speed) * -0.3);
+}
+
+.three-body__dot:nth-child(2) {
+    bottom: 5%;
+    right: 0;
+    transform: rotate(-60deg);
+    transform-origin: 50% 85%;
+}
+
+.three-body__dot:nth-child(2)::after {
+    bottom: 0;
+    left: 0;
+    animation: wobble1 var(--uib-speed) infinite
+        calc(var(--uib-speed) * -0.15) ease-in-out;
+}
+
+.three-body__dot:nth-child(3) {
+    bottom: -5%;
+    left: 0;
+    transform: translateX(116.666%);
+}
+
+.three-body__dot:nth-child(3)::after {
+    top: 0;
+    left: 0;
+    animation: wobble2 var(--uib-speed) infinite ease-in-out;
+}
+
+@keyframes spin78236 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wobble1 {
+    0%, 100% {
+        transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-66%) scale(0.65);
+        opacity: 0.8;
+    }
+}
+
+@keyframes wobble2 {
+    0%, 100% {
+        transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(66%) scale(0.65);
+        opacity: 0.8;
+    }
+}
+
+@media (max-width: 48rem) {
+    .loader {
+        padding: 10px; 
+    }
+
+    .three-body {
+        --uib-size: 25px; 
+    }
+}
+
+
+      .logo img {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        width: 100%;
+        max-width: 270px;
+        height: auto;
+      }
+      #info {
+        position: absolute;
+        top: 10px;
+        font-size: 14px;
+        color: #ffffff;
+        text-align: center;
+        width: 100%;
+      }
+      #menu {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+      }
+      button {
+        color: rgb(255, 255, 255);
+        background: transparent;
+        outline: 1px solid rgba(106, 90, 205, 0.75);
+        border: 0px;
+        padding: 5px 10px;
+        cursor: pointer;
+        position: relative;
+      }
+      button:hover {
+        background-color: rgba(106, 90, 205, 0.5);
+      }
+      button:active {
+        color: #FFFFFF;
+        background-color: rgba(106, 90, 205, 0.75);
+      }
+      #outro {
+        color: rgb(255, 255, 255);
+        background: #6A5ACD;
+        border: 2px solid #6A5ACD;
+        border-radius: 12px;
+        padding: 10px 20px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: color 0.3s;
+        left: 2rem;
+      }
+      #outro:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: rgba(106, 90, 205, 0.3);
+        transition: transform 0.3s;
+        transform: translate(-50%, -50%) scale(0);
+        border-radius: 50%;
+        z-index: 0;
+      }
+      #outro:hover:before {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      #outro span {
+        position: relative;
+        z-index: 1;
+      }
+      .bond {
+        width: 5px;
+        height: 10px;
+        background: #eee;
+        display: block;
+      }
+      @media (max-width: 600px) {
+        .logo img {
+          max-width: 100px;
+        }
+      }
+      @media (max-width: 400px) {
+        .logo img {
+          max-width: 80px;
+        }
+      }
+
+      button {
+    color: #fff;
+    background: linear-gradient(135deg, #5D3FD3, #6A5ACD);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #6A5ACD, #5D3FD3);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#outro {
+    background: #6A5ACD;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+#outro:hover {
+    background: #5D3FD3;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .logo img {
+        max-width: 100px;
+    }
+}
+    </style>
+</head>
+<body>
+
+  <div class="loader" id="loader">
+    <div class="three-body">
+        <div class="three-body__dot"></div>
+        <div class="three-body__dot"></div>
+        <div class="three-body__dot"></div>
+    </div>
+</div>
+
+    <a href="/Frontend/index.html"><div class="logo"><img src="/Frontend/Assets home/Logo.svg" alt="Logo GenoTech"></div></a>
+    <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener"></a>Moléculas em 3D</div>
+    <div id="container"></div>
+    <div id="menu">
+      <a href="TabelaPeriodica3D.html">
+        <button id="outro">
+          <span class="icon"><i class="fas fa-flask"></i></span> Tabela periódica 3D
+          <div class="tooltip"></div>
+        </button>
+      </a>
+        <a href="GenoTech3D.html">
+          <button id="outro">
+            <span class="icon"><i class=""></i></span> GenoTech 3D
+            <div class="tooltip"></div>
+          </button>
+        </a>
+    </div>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../build/three.module.js",
+          "three/addons/": "./jsm/"
+        }
+      }
+    </script>
+    <script type="module">
+      import * as THREE from 'three';
+      import { TrackballControls } from 'three/addons/controls/TrackballControls.js';
+      import { PDBLoader } from 'three/addons/loaders/PDBLoader.js';
+      import { CSS3DRenderer, CSS3DObject, CSS3DSprite } from 'three/addons/renderers/CSS3DRenderer.js';
+      import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
+
+      let camera, scene, renderer;
+      let controls;
+      let root;
+
+      const objects = [];
+      const tmpVec1 = new THREE.Vector3();
+      const tmpVec2 = new THREE.Vector3();
+      const tmpVec3 = new THREE.Vector3();
+      const tmpVec4 = new THREE.Vector3();
+      const offset = new THREE.Vector3();
+
+      const VIZ_TYPE = {
+        'Átomos': 0,
+        'Ligações': 1,
+        'Átomos + Ligações': 2
+      };
+
+      const MOLECULES = {
+        'Etanol': 'ethanol.pdb',
+        'Aspirina': 'aspirin.pdb',
+        'Cafeína': 'caffeine.pdb',
+        'Nicotina': 'nicotine.pdb',
+        'LSD': 'lsd.pdb',
+        'Cocaína': 'cocaine.pdb',
+        'Colesterol': 'cholesterol.pdb',
+        'Licopeno': 'lycopene.pdb',
+        'Glicose': 'glucose.pdb',
+        'Óxido de alumínio': 'Al2O3.pdb',
+        'Cubano': 'cubane.pdb',
+        'Cobre': 'cu.pdb',
+        'Fluorita': 'caf2.pdb',
+        'Sal': 'nacl.pdb',
+        'Supercondutor YBCO': 'ybco.pdb',
+        'Buckyball': 'buckyball.pdb',
+        // 'Diamond': 'diamond.pdb',
+        'Grafite': 'graphite.pdb'
+      };
+
+      const params = {
+        vizType: 2,
+        molecule: 'caffeine.pdb'
+      };
+
+      const loader = new PDBLoader();
+      const colorSpriteMap = {};
+      const baseSprite = document.createElement( 'img' );
+
+      init();
+      animate();
+
+      function init() {
+        camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 5000 );
+        camera.position.z = 1000;
+
+        scene = new THREE.Scene();
+        root = new THREE.Object3D();
+        scene.add( root );
+
+        renderer = new CSS3DRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        document.getElementById( 'container' ).appendChild( renderer.domElement );
+
+        controls = new TrackballControls( camera, renderer.domElement );
+        controls.rotateSpeed = 0.5;
+
+        baseSprite.onload = function () {
+          loadMolecule( params.molecule );
+        };
+
+        baseSprite.src = 'textures/sprites/ball.png';
+
+        window.addEventListener( 'resize', onWindowResize );
+
+        const gui = new GUI();
+        gui.add( params, 'vizType', VIZ_TYPE ).name('Tipo de Visualização').onChange( changeVizType );
+        gui.add( params, 'molecule', MOLECULES ).name('Molécula').onChange( loadMolecule );
+        gui.open();
+      }
+
+      function changeVizType( value ) {
+        if ( value === 0 ) showAtoms();
+        else if ( value === 1 ) showBonds();
+        else showAtomsBonds();
+      }
+
+      function showAtoms() {
+        for ( let i = 0; i < objects.length; i ++ ) {
+          const object = objects[ i ];
+          if ( object instanceof CSS3DSprite ) {
+            object.element.style.display = '';
+            object.visible = true;
+          } else {
+            object.element.style.display = 'none';
+            object.visible = false;
+          }
+        }
+      }
+
+      function showBonds() {
+        for ( let i = 0; i < objects.length; i ++ ) {
+          const object = objects[ i ];
+          if ( object instanceof CSS3DSprite ) {
+            object.element.style.display = 'none';
+            object.visible = false;
+          } else {
+            object.element.style.display = '';
+            object.element.style.height = object.userData.bondLengthFull;
+            object.visible = true;
+          }
+        }
+      }
+
+      function showAtomsBonds() {
+        for ( let i = 0; i < objects.length; i ++ ) {
+          const object = objects[ i ];
+          object.element.style.display = '';
+          object.visible = true;
+          if ( ! ( object instanceof CSS3DSprite ) ) {
+            object.element.style.height = object.userData.bondLengthShort;
+          }
+        }
+      }
+
+      function colorify( ctx, width, height, color ) {
+        const r = color.r, g = color.g, b = color.b;
+        const imageData = ctx.getImageData( 0, 0, width, height );
+        const data = imageData.data;
+        for ( let i = 0, l = data.length; i < l; i += 4 ) {
+          data[ i + 0 ] *= r;
+          data[ i + 1 ] *= g;
+          data[ i + 2 ] *= b;
+        }
+        ctx.putImageData( imageData, 0, 0 );
+      }
+
+      function imageToCanvas( image ) {
+        const width = image.width;
+        const height = image.height;
+        const canvas = document.createElement( 'canvas' );
+        canvas.width = width;
+        canvas.height = height;
+        const context = canvas.getContext( '2d' );
+        context.drawImage( image, 0, 0, width, height );
+        return canvas;
+      }
+
+      function loadMolecule( model ) {
+        const url = 'models/pdb/' + model;
+        for ( let i = 0; i < objects.length; i ++ ) {
+          const object = objects[ i ];
+          object.parent.remove( object );
+        }
+        objects.length = 0;
+        loader.load( url, function ( pdb ) {
+          const geometryAtoms = pdb.geometryAtoms;
+          const geometryBonds = pdb.geometryBonds;
+          const json = pdb.json;
+          geometryAtoms.computeBoundingBox();
+          geometryAtoms.boundingBox.getCenter( offset ).negate();
+          geometryAtoms.translate( offset.x, offset.y, offset.z );
+          geometryBonds.translate( offset.x, offset.y, offset.z );
+          const positionAtoms = geometryAtoms.getAttribute( 'position' );
+          const colorAtoms = geometryAtoms.getAttribute( 'color' );
+          const position = new THREE.Vector3();
+          const color = new THREE.Color();
+          for ( let i = 0; i < positionAtoms.count; i ++ ) {
+            position.fromBufferAttribute( positionAtoms, i );
+            color.fromBufferAttribute( colorAtoms, i );
+            const atomJSON = json.atoms[ i ];
+            const element = atomJSON[ 4 ];
+            if ( ! colorSpriteMap[ element ] ) {
+              const canvas = imageToCanvas( baseSprite );
+              const context = canvas.getContext( '2d' );
+              colorify( context, canvas.width, canvas.height, color );
+              const dataUrl = canvas.toDataURL();
+              colorSpriteMap[ element ] = dataUrl;
+            }
+            const colorSprite = colorSpriteMap[ element ];
+            const atom = document.createElement( 'img' );
+            atom.src = colorSprite;
+            const object = new CSS3DSprite( atom );
+            object.position.copy( position );
+            object.position.multiplyScalar( 75 );
+            object.matrixAutoUpdate = false;
+            object.updateMatrix();
+            root.add( object );
+            objects.push( object );
+          }
+          const positionBonds = geometryBonds.getAttribute( 'position' );
+          const start = new THREE.Vector3();
+          const end = new THREE.Vector3();
+          for ( let i = 0; i < positionBonds.count; i += 2 ) {
+            start.fromBufferAttribute( positionBonds, i );
+            end.fromBufferAttribute( positionBonds, i + 1 );
+            start.multiplyScalar( 75 );
+            end.multiplyScalar( 75 );
+            tmpVec1.subVectors( end, start );
+            const bondLength = tmpVec1.length() - 50;
+            let bond = document.createElement( 'div' );
+            bond.className = 'bond';
+            bond.style.height = bondLength + 'px';
+            let object = new CSS3DObject( bond );
+            object.position.copy( start );
+            object.position.lerp( end, 0.5 );
+            object.userData.bondLengthShort = bondLength + 'px';
+            object.userData.bondLengthFull = ( bondLength + 55 ) + 'px';
+            const axis = tmpVec2.set( 0, 1, 0 ).cross( tmpVec1 );
+            const radians = Math.acos( tmpVec3.set( 0, 1, 0 ).dot( tmpVec4.copy( tmpVec1 ).normalize() ) );
+            const objMatrix = new THREE.Matrix4().makeRotationAxis( axis.normalize(), radians );
+            object.matrix.copy( objMatrix );
+            object.quaternion.setFromRotationMatrix( object.matrix );
+            object.matrixAutoUpdate = false;
+            object.updateMatrix();
+            root.add( object );
+            objects.push( object );
+            const joint = new THREE.Object3D();
+            joint.position.copy( start );
+            joint.position.lerp( end, 0.5 );
+            joint.matrix.copy( objMatrix );
+            joint.quaternion.setFromRotationMatrix( joint.matrix );
+            joint.matrixAutoUpdate = false;
+            joint.updateMatrix();
+            bond = document.createElement( 'div' );
+            bond.className = 'bond';
+            bond.style.height = bondLength + 'px';
+            object = new CSS3DObject( bond );
+            object.rotation.y = Math.PI / 2;
+            object.matrixAutoUpdate = false;
+            object.updateMatrix();
+            object.userData.bondLengthShort = bondLength + 'px';
+            object.userData.bondLengthFull = ( bondLength + 55 ) + 'px';
+            object.userData.joint = joint;
+            joint.add( object );
+            root.add( joint );
+            objects.push( object );
+          }
+          changeVizType( params.vizType );
+        } );
+      }
+
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+      }
+
+      function animate() {
+        requestAnimationFrame( animate );
+        controls.update();
+        const time = Date.now() * 0.0004;
+        root.rotation.x = time;
+        root.rotation.y = time * 0.7;
+        render();
+      }
+
+      function render() {
+        renderer.render( scene, camera );
+      }
+
+      
+        window.addEventListener('load', function() {
+            document.getElementById('loader').style.display = 'none';
+        });
+    
+    </script>
+  </body>
+</html>

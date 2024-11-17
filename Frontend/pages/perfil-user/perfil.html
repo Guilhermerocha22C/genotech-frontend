@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Frontend/pages/perfil-user/perfil.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <a href="/Frontend/index.html">
+            <div id="img-logo-header">
+                <img class="logo" src="/Frontend/Assets home/Logo.svg" alt="Logo Geno Tech">
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <button class="btn btn-logout" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Sair
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-image-container">
+                    <img id="profileImage" src="/Frontend/Assets home/imagem-do-usuario-com-fundo-preto.png" alt="Foto de Perfil" class="profile-image">
+                    <div class="overlay">
+                        <button class="btn btn-light btn-sm" onclick="document.getElementById('imageUpload').click()">
+                            <i class="fas fa-camera"></i> Alterar Foto
+                        </button>
+                    </div>
+                    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">
+                            Meu Perfil 
+                            <span id="adminStar" class="admin-star tooltip" style="display: none;">
+                                <i class="fas fa-star"></i>
+                                <span class="tooltiptext">Desenvolvedor do Sistema</span>
+                            </span>
+                        </h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="usernameInput"><i class="fas fa-user"></i> Nome de Usuário</label>
+                                <input type="text" id="usernameInput" class="form-control" placeholder="Seu nome">
+                            </div>
+                            <div class="form-group">
+                                <label for="emailInput"><i class="fas fa-envelope"></i> E-mail</label>
+                                <input type="email" id="emailInput" class="form-control" placeholder="seu@email.com" readonly>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-block" onclick="updateProfile()">
+                                <i class="fas fa-save"></i> Atualizar Perfil
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/Frontend/pages/perfil-user/perfil.js"></script>
+</body>
+</html>

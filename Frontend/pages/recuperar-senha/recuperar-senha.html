@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha - Geno Tech</title>
+    <link rel="stylesheet" href="recuperar-senha.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="recuperar-senha-container">
+            <h2>Recuperar Senha</h2>
+            <p class="subtitle">Insira seu e-mail para receber um link de recuperação</p>
+            <form id="recuperarSenhaForm">
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+                </div>
+                <button type="submit">Enviar Link de Recuperação</button>
+            </form>
+            <p id="message"></p>
+            <p class="back-link"><a href="/Frontend/pages/Login/login.html">Voltar para Login</a></p>
+        </div>
+    </div>
+    <script src="recuperar-senha.js"></script>
+</body>
+</html>

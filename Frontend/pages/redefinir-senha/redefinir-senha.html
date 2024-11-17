@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha - Geno Tech</title>
+    <link rel="stylesheet" href="redefinir-senha.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="redefinir-senha-container">
+            <h2>Redefinir Senha</h2>
+            <p class="subtitle">Crie uma nova senha segura para sua conta</p>
+            <form id="redefinirSenhaForm">
+                <div class="input-group">
+                    <input type="password" id="novaSenha" name="novaSenha" required placeholder="Nova Senha">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" required placeholder="Confirmar Nova Senha">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <input type="hidden" id="token" name="token">
+                <button type="submit">Redefinir Senha</button>
+            </form>
+            <p id="message"></p>
+        </div>
+    </div>
+    <script src="redefinir-senha.js"></script>
+    <script>
+        function getUrlParameter(name) {
+            name = name.replace(/[$$]/, '\$$').replace(/[$$]/, '\$$');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+    
+        var token = getUrlParameter('token');
+        console.log('Token:', token);
+        document.getElementById('token').value = token;
+    </script>
+</body>
+</html>

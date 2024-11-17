@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Geno Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="login-section">
+            <header>
+                <div class="tema">
+                    <img src="/Frontend/pages/quiz/assets/images/icon-sun-dark.svg" alt="Ícone do Sol">
+                    <button>
+                        <div></div>
+                    </button>
+                    <img src="/Frontend/pages/quiz/assets/images/icon-moon-dark.svg" alt="Ícone da Lua">
+                </div>
+            </header>
+            <h1>Bem vindo de volta!</h1>
+            <p>Insira suas credenciais para acessar sua conta:</p>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                    <a href="/Frontend/pages/recuperar-senha/recuperar-senha.html" class="forgot-password">Esqueci minha senha</a>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Confirme a Senha:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua senha" required>
+                </div>
+                <p id="passwordMismatch" class="error-message"></p>
+                <div class="g-recaptcha" data-sitekey="6LcuZHUqAAAAAHn4Iw-VvfPd_e89oQ5rgFHpk8Lj"></div>
+                <button type="submit">Login</button>
+                <p id="message"></p>
+                <p>Não tem uma conta? <a href="/Frontend/Registro/register.html">Cadastre-se</a></p>
+            </form>
+        </div>
+        <div class="image-section">
+        </div>
+    </div>
+    <script type="module" src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Frontend/pages/quiz/pages/quiz/quiz.css">
+    <link rel="icon" href="/Ico pages/quiz.ico" type="image/x-icon">
+    <script src="/Frontend/pages/quiz/pages/quiz/quiz.js" type="module" defer></script>
+    <title>Geno Quiz - Perguntas</title>
+</head>
+<body>
+
+    <div class="loader" id="loader">
+        <div class="three-body">
+            <div class="three-body__dot"></div>
+            <div class="three-body__dot"></div>
+            <div class="three-body__dot"></div>
+        </div>
+    </div>
+
+    <a href="#" class="fechar-button" id="abrir-popup">
+        <img src="/Frontend/pages/feedback/images/cross 1.svg" alt="Close">
+    </a>
+
+    <div class="popup" id="popup">
+        <div class="popup-conteudo">
+            <p>Tem certeza que deseja sair agora?</p>
+            <button onclick="window.location.href='/Frontend/index.html'">Sim</button>
+            
+            <button id="fechar-popup">Cancelar</button>
+        </div>
+    </div>
+    
+    <header>
+        <div class="assunto">
+            <div class="assunto_icone">
+                <img src="" alt="">
+            </div>
+
+            <h1></h1>
+        </div>
+
+        <div class="tema">
+            <img src="/Frontend/pages/quiz/assets/images/icon-sun-dark.svg" alt="Ícone do Sol">
+            <button>
+                <div></div>
+            </button>
+            <img src="/Frontend/pages/quiz/assets/images/icon-moon-dark.svg" alt="Ícone da Lua">
+        </div>
+    </header>
+
+    <main>
+        <div id="sistema-pontos-popup" class="sistema-pontos-overlay">
+            <div class="sistema-pontos-conteudo">
+                <h2>🏆 Sistema de Pontos</h2>
+                <p>Bem-vindo ao nosso quiz! Aqui está como funciona o sistema de pontos:</p>
+                <ul>
+                    <li>Cada resposta correta vale 10 pontos.</li>
+                    <li>Não há penalidade para respostas incorretas.</li>
+                    <li>Seu total de pontos é acumulado ao longo de todos os quizzes.</li>
+                    <li>Quanto mais pontos você acumular, mais alto será seu ranking!</li>
+                </ul>
+                <button id="fechar-sistema-pontos">Entendi, vamos começar!</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('abrir-popup').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            document.getElementById('popup').style.display = 'flex';
+        });
+
+        document.getElementById('fechar-popup').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+        });
+
+        window.addEventListener('load', function() {
+        document.getElementById('loader').style.display = 'none';
+    });
+    </script>
+</body>
+</html>

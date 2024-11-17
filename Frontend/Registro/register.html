@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Geno Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="register.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="login-section">
+            <header>
+                <div class="tema">
+                    <img src="/Frontend/pages/quiz/assets/images/icon-sun-dark.svg" alt="Ícone do Sol">
+                    <button>
+                        <div></div>
+                    </button>
+                    <img src="/Frontend/pages/quiz/assets/images/icon-moon-dark.svg" alt="Ícone da Lua">
+                </div>
+            </header>
+            <h1>Comece agora!</h1>
+            <p>Preencha os campos abaixo para criar sua conta:</p>
+            <form id="registerForm">
+                <div class="input-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="input-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                </div>
+                <p id="passwordMismatch" class="error-message"></p>
+                <div class="g-recaptcha" data-sitekey="6LcuZHUqAAAAAHn4Iw-VvfPd_e89oQ5rgFHpk8Lj"></div>
+                <button type="submit">Registrar</button>
+                <p id="message"></p>
+                <p>Já tem uma conta? <a href="/Frontend/pages/Login/login.html">Faça login</a></p>
+            </form>
+        </div>
+        <div class="image-section">
+        </div>
+    </div>
+    <script type="module" src="register.js"></script>
+</body>
+</html>

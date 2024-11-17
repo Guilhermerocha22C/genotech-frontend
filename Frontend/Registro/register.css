@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --purple: #A729F5;
+    --white: #FFFFFF;
+    --background-light: #f0f2f5;
+    --background-dark: #1C1E21;
+    --text-light: #333333;
+    --text-dark: #FFFFFF;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-light);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.5s ease;
+}
+
+body.escuro {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.login-section {
+    background-color: var(--white);
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    max-width: 50%;
+    transition: background-color 0.5s ease;
+}
+
+.image-section {
+    flex: 1;
+    background-image: url('./assets/img1.svg');
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    transition: transform 0.5s ease;
+}
+
+.image-section:hover {
+    transform: scale(1.02);
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 24px;
+}
+
+.tema {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tema img {
+    width: 16px;
+    transition: transform 0.3s ease;
+}
+
+.tema img:hover {
+    transform: scale(1.1);
+}
+
+.tema button {
+    height: 20px;
+    width: 32px;
+    background: var(--purple);
+    border: 0;
+    border-radius: 999px;
+    padding: 4px;
+    display: flex;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tema button:hover {
+    background-color: #8f23d3;
+}
+
+.tema button div {
+    background: var(--white);
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    transition: transform 0.3s ease;
+}
+
+h1, p {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+h1 {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+p {
+    color: #000;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.input-group {
+    width: 100%;
+    max-width: 404px;
+    margin-bottom: 1rem;
+    position: relative;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #000;
+    text-align: left;
+    font-weight: 500;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 404px;
+    height: 40px;
+    padding: 0 0.5rem;
+    border: 1px solid #dddfe2;
+    border-radius: 13px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 2px rgba(167, 41, 245, 0.2);
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 404px;
+    height: 40px;
+    padding: 0;
+    background-color: var(--purple);
+    color: var(--white);
+    border: none;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button[type="submit"]:hover {
+    background-color: #8f23d3;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.g-recaptcha {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    width: 404px;
+    animation: fadeIn 0.5s ease-out 0.3s both;
+}
+
+#message {
+    color: #ff0000;
+    margin-top: 1rem;
+}
+
+body.escuro .login-section {
+    background-color: #302C42;
+}
+
+body.escuro h1,
+body.escuro p,
+body.escuro label {
+    color: var(--text-dark);
+}
+
+body.escuro input[type="text"],
+body.escuro input[type="email"],
+body.escuro input[type="password"] {
+    background-color: #302C42;
+    color: var(--text-dark);
+    border-color: #D9D9D9;
+}
+
+body.escuro a {
+    color: #B85AFF;
+}
+
+input::placeholder {
+    opacity: 1;
+    color: #cccaca;
+    font-size: 12px;
+}
+
+body.escuro input::placeholder {
+    color: #D9D9D9;
+}
+
+#message {
+    white-space: pre-line;
+}

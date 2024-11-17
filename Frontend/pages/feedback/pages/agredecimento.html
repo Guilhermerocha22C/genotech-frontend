@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="agredecimento.css">
+    <script src="../pages/agradecimento.js" defer></script>
+    <title>Feedback - Agradecimento</title>
+</head>
+<body>
+
+    <div class="loader" id="loader">
+        <div class="three-body">
+            <div class="three-body__dot"></div>
+            <div class="three-body__dot"></div>
+            <div class="three-body__dot"></div>
+        </div>
+    </div>
+
+    <a href="#" class="fechar-button" id="abrir-popup">
+        <img src="/Frontend/pages/feedback/images/cross 1.svg" alt="Close">
+    </a>
+
+    <div class="popup" id="popup">
+        <div class="popup-conteudo">
+            <p>Deseja voltar para a home ou ir para a página de conteúdos?</p>
+            <button onclick="window.location.href='/Frontend/index.html'">Voltar para a Home</button>
+            <button onclick="window.location.href='/Frontend/pages/Assuntos-pagina/assuntos-pagina.html'">Ir para a Página de Conteúdos</button>
+            <button id="fechar-popup">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="../images/Feedback SVG.svg" alt="Ilustração de agradecimento">
+        <p class="paragrafo_nota">Você selecionou 4 de 5</p>
+        <h1>Obrigado!</h1>
+        <p>Obrigado pelo seu feedback! <br>
+            Sua opinião é importante para nós. Se precisar de mais informações ou tiver dúvidas, entre em contato!</p>
+    </div>
+
+    <script>
+        document.getElementById('abrir-popup').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            document.getElementById('popup').style.display = 'flex';
+        });
+
+        document.getElementById('fechar-popup').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+        });
+
+        window.addEventListener('load', function() {
+        document.getElementById('loader').style.display = 'none';
+    });
+    </script>
+</body>
+</html>
