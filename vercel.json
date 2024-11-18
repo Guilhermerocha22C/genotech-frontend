@@ -20,6 +20,10 @@
       "dest": "/Frontend/pages/3D/examples/Moleculas3D.html"
     },
     {
+      "src": "/Frontend/pages/3D/examples/(.*)",
+      "dest": "/Frontend/pages/3D/examples/$1"
+    },
+    {
       "src": "/Frontend/(.*)",
       "dest": "/Frontend/$1"
     },
