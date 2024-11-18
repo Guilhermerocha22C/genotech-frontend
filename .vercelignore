@@ -7,3 +7,15 @@ node_modules/
 !Frontend/pages/3D/examples/models/
 !Frontend/pages/3D/examples/js/
 !Frontend/pages/3D/examples/css/
+
+# Ignorar arquivos e pastas desnecessárias
+3D/build/
+3D/docs/
+3D/editor/
+3D/api/
+3D/manual/
+3D/prettify/
+3D/resources/
+3D/examples/fonts/
+3D/examples/ies/
+3D/examples/luts/
