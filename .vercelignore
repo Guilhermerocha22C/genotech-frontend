@@ -2,20 +2,13 @@
 node_modules/
 .env
 
-# Permitir arquivos necessários para a página 3D
+# Ignore tudo em 3D exceto o necessário
+Frontend/pages/3D/*
 !Frontend/pages/3D/examples/Moleculas3D.html
-!Frontend/pages/3D/examples/models/
-!Frontend/pages/3D/examples/js/
-!Frontend/pages/3D/examples/css/
+!Frontend/pages/3D/examples/js
+!Frontend/pages/3D/examples/models/pdb
+!Frontend/pages/3D/examples/textures/sprites/ball.png
+!Frontend/pages/3D/build/three.module.js
 
-# Ignorar arquivos e pastas desnecessárias
-3D/build/
-3D/docs/
-3D/editor/
-3D/api/
-3D/manual/
-3D/prettify/
-3D/resources/
-3D/examples/fonts/
-3D/examples/ies/
-3D/examples/luts/
+# Ignore node_modules no Backend
+Backend/node_modules
