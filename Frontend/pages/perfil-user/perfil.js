@@ -33,7 +33,7 @@ async function updateProfile() {
     }
 
     try {
-        const response = await fetch(`http://localhost:3001/api/user/update/${userData.id}`, {
+        const response = await fetch(`genotechfullstack.vercel.app/api/user/update/${userData.id}`, {
             method: 'PUT',
             body: formData
         });
@@ -46,7 +46,7 @@ async function updateProfile() {
         if (data.success) {
             userData.nome = newName;
             if (data.imageUrl) {
-                userData.profileImageUrl = `http://localhost:3001${data.imageUrl}`;
+                userData.profileImageUrl = `genotechfullstack.vercel.app${data.imageUrl}`;
             }
             localStorage.setItem('userData', JSON.stringify(userData));
             alert('Perfil atualizado com sucesso!');
@@ -72,7 +72,7 @@ async function loadUserData() {
     console.log('Dados do usuário do localStorage:', user);
 
     try {
-        const response = await fetch(`http://localhost:3001/api/user/${user.id}`);
+        const response = await fetch(`genotechfullstack.vercel.app/api/user/${user.id}`);
         const data = await response.json();
         
         if (data.success) {

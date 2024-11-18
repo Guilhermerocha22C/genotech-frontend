@@ -83,7 +83,7 @@ app.get('/api/user/:id', (req, res) => {
         }
         const user = results[0];
         user.profileImageUrl = user.profile_image_url 
-            ? `http://localhost:3001${user.profile_image_url}`
+            ? `genotechfullstack.vercel.app${user.profile_image_url}`
             : null;
             user.isAdmin = adminEmails.includes(user.email); 
         res.json({ success: true, user });
@@ -165,7 +165,7 @@ app.post('/api/login', async (req, res) => {
                     delete user.senha;
                     // Sempre incluir a URL completa da imagem de perfil
                     user.profileImageUrl = user.profile_image_url 
-                        ? `http://localhost:3001${user.profile_image_url}`
+                        ? `genotechfullstack.vercel.app${user.profile_image_url}`
                         : null;
                     console.log('Dados do usuário enviados:', user);
                     res.status(200).json({ 
