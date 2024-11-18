@@ -1,39 +1,8 @@
-# Ignore node_modules
-node_modules/
-
-# Ignore todos os arquivos e pastas dentro de Frontend/pages/3D/examples, exceto os essenciais
-Frontend/pages/3D/examples/*
-!Frontend/pages/3D/examples/index.html
-!Frontend/pages/3D/examples/js/
-!Frontend/pages/3D/examples/css/
-
-# Dentro de js e css, mantenha apenas os arquivos essenciais
-Frontend/pages/3D/examples/js/*
-!Frontend/pages/3D/examples/js/three.min.js
-!Frontend/pages/3D/examples/js/controls/OrbitControls.js
-# Adicione outros arquivos JS essenciais aqui
-
-Frontend/pages/3D/examples/css/*
-!Frontend/pages/3D/examples/css/main.css
-# Adicione outros arquivos CSS essenciais aqui
-
-# Ignore todos os modelos 3D, exceto os absolutamente necessários
 Frontend/pages/3D/examples/models/
-!Frontend/pages/3D/examples/models/essential-model.glb
-# Adicione outros modelos essenciais aqui
-
-# Ignore todas as texturas, exceto as absolutamente necessárias
-Frontend/pages/3D/examples/textures/
-!Frontend/pages/3D/examples/textures/essential-texture.jpg
-# Adicione outras texturas essenciais aqui
-
-# Ignore arquivos grandes de assets
 Frontend/assets assuntos/*.svg
-Frontend/Assets home/*.svg
-
-# Ignore arquivos de desenvolvimento e backup
-**/*.log
-**/*.bak
-**/*.tmp
-.vscode/
-.idea/
+Frontend/pages/Conteudos Estrutura e Função do DNA/Estrutura Molecular do DNA/Assets copy/*.svg
+node_modules/
+.env
+*.blend
+*.tga
+*.glb
