@@ -1,6 +1,16 @@
 
-node_modules/
 .env
 *.blend
 *.tga
 *.glb
+
+# Ignore node_modules
+node_modules/
+
+# Ignore todos os arquivos e pastas dentro de Frontend/pages/3D/examples, exceto os essenciais
+!Frontend/pages/3D/examples/*
+!Frontend/pages/3D/examples/index.html
+!Frontend/pages/3D/examples/js/
+!Frontend/pages/3D/examples/css/
+
+Frontend/assets assuntos/*.svg
