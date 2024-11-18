@@ -1,33 +1,49 @@
-# Ignore arquivos grandes e desnecessários
+# Ignore node_modules e arquivos de ambiente
 node_modules/
 .env
 
-# Ignore arquivos desnecessários
-3D/examples/fonts/
-3D/examples/jsm/libs/
-3D/examples/jsm/loaders/
-3D/examples/jsm/math/
-3D/examples/jsm/misc/
-3D/examples/jsm/nodes/
-3D/examples/jsm/postprocessing/
-3D/examples/jsm/renderers/webgpu/
-3D/examples/jsm/shaders/
-3D/examples/jsm/utils/
-3D/examples/models/
-3D/examples/textures/
+# Ignore diretórios e arquivos desnecessários do Three.js dentro de examples
+Frontend/pages/3D/examples/fonts/
+Frontend/pages/3D/examples/ies/
+Frontend/pages/3D/examples/jsm/libs/
+Frontend/pages/3D/examples/jsm/loaders/
+Frontend/pages/3D/examples/jsm/math/
+Frontend/pages/3D/examples/jsm/misc/
+Frontend/pages/3D/examples/jsm/nodes/
+Frontend/pages/3D/examples/jsm/postprocessing/
+Frontend/pages/3D/examples/jsm/renderers/webgpu/
+Frontend/pages/3D/examples/jsm/shaders/
+Frontend/pages/3D/examples/jsm/utils/
+Frontend/pages/3D/examples/models/
+Frontend/pages/3D/examples/textures/
 
-# Arquivos grandes que provavelmente não são necessários para o site em produção
+# Ignore arquivos específicos grandes
 Frontend/pages/3D/examples/models/ifc/rac_advanced_sample_project.ifc
 Frontend/pages/3D/examples/models/gltf/Xbot.blend
 
-# Diretórios de exemplos e recursos que podem não ser necessários em produção
-Frontend/pages/3D/examples/
-Frontend/pages/3D/manual/examples/
-
 # Mantenha apenas os modelos PDB necessários
-!3D/examples/models/pdb/
-# Mantenha apenas as texturas necessárias
-!3D/examples/textures/sprites/ball.png
+!Frontend/pages/3D/examples/models/pdb/
 
-# Modelos 3D que podem não ser necessários (verifique quais são realmente usados)
+# Mantenha apenas as texturas necessárias
+!Frontend/pages/3D/examples/textures/sprites/ball.png
+
+# Ignore modelos 3D grandes, exceto os necessários
 Frontend/pages/3D/examples/models/gltf/*.glb
+!Frontend/pages/3D/examples/models/gltf/DamagedHelmet.glb
+
+# Ignore arquivos TGA (converta-os para formatos web antes, se necessário)
+Frontend/pages/3D/examples/resources/models/windmill_2/*.tga
+
+# Ignore quaisquer arquivos de backup ou temporários
+**/*.bak
+**/*.tmp
+**/*.temp
+
+# Ignore arquivos de log
+**/*.log
+
+# Ignore arquivos de configuração específicos do ambiente de desenvolvimento
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
