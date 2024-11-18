@@ -1,1 +1,10 @@
-node_modules
+# Ignore arquivos grandes e desnecessários
+Frontend/pages/3D/examples/models/
+Frontend/assets assuntos/*.svg
+Frontend/pages/Conteudos Estrutura e Função do DNA/Estrutura Molecular do DNA/Assets copy/*.svg
+Frontend/Assets home/*.svg
+node_modules/
+.env
+*.blend
+*.tga
+*.glb
