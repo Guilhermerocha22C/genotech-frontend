@@ -2,13 +2,20 @@
 node_modules/
 .env
 
-# Ignore tudo em 3D exceto o necessário
-Frontend/pages/3D/*
-!Frontend/pages/3D/examples/Moleculas3D.html
-!Frontend/pages/3D/examples/js
-!Frontend/pages/3D/examples/models/pdb
-!Frontend/pages/3D/examples/textures/sprites/ball.png
-!Frontend/pages/3D/build/three.module.js
-
-# Ignore node_modules no Backend
-Backend/node_modules
+# Ignore arquivos desnecessários
+3D/examples/fonts/
+3D/examples/jsm/libs/
+3D/examples/jsm/loaders/
+3D/examples/jsm/math/
+3D/examples/jsm/misc/
+3D/examples/jsm/nodes/
+3D/examples/jsm/postprocessing/
+3D/examples/jsm/renderers/webgpu/
+3D/examples/jsm/shaders/
+3D/examples/jsm/utils/
+3D/examples/models/
+3D/examples/textures/
+# Mantenha apenas os modelos PDB necessários
+!3D/examples/models/pdb/
+# Mantenha apenas as texturas necessárias
+!3D/examples/textures/sprites/ball.png
