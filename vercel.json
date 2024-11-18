@@ -3,17 +3,13 @@
     "builds": [
       {
         "src": "Backend/src/app.js",
-        "use": "@vercel/node",
-        "config": {
-          "includeFiles": [
-            "Backend/src/**",
-            "Backend/package.json"
-          ]
-        }
+        "use": "@vercel/node"
       }
     ],
     "routes": [
-      { "src": "/api/(.*)", "dest": "Backend/src/app.js" },
-      { "src": "/(.*)", "dest": "Frontend/$1" }
+      {
+        "src": "/api/(.*)",
+        "dest": "Backend/src/app.js"
+      }
     ]
   }
