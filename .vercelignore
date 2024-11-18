@@ -1,6 +1,4 @@
-Frontend/pages/3D/examples/models/
-Frontend/assets assuntos/*.svg
-Frontend/pages/Conteudos Estrutura e Função do DNA/Estrutura Molecular do DNA/Assets copy/*.svg
+
 node_modules/
 .env
 *.blend

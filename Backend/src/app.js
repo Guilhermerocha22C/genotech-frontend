@@ -50,7 +50,7 @@ const con = mysql.createConnection({
     database: process.env.DB_DATABASE,
     port: process.env.DB_PORT,
       charset: 'utf8mb4',
-      connectTimeout: 10000
+      connectTimeout: 20000
 });
 
 // Estabelecer conexão com o banco de dados
