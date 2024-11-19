@@ -4,7 +4,7 @@ document.getElementById('recuperarSenhaForm').addEventListener('submit', async (
     const email = document.getElementById('email').value;
     
     try {
-        const response = await fetch('http://localhost:3001/api/recuperar-senha', {
+        const response = await fetch('https://genotech-backend.vercel.app/api/recuperar-senha', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

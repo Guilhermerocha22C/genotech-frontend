@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchUsers() {
     try {
-        const response = await fetch('http://localhost:3001/api/admin/users');
+        const response = await fetch('https://genotech-backend.vercel.app/api/admin/users');
         const data = await response.json();
         if (data.success) {
             allUsers = data.users;
@@ -197,7 +197,7 @@ async function editUser(userId, userName, userEmail) {
     if (formValues) {
         const [newName, newEmail] = formValues;
         try {
-            const response = await fetch(`http://localhost:3001${userId}`, {
+            const response = await fetch(`https://genotech-backend.vercel.app${userId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -233,7 +233,7 @@ async function deleteUser(userId) {
 
     if (result.isConfirmed) {
         try {
-            const response = await fetch(`http://localhost:3001/api/admin/users/${userId}`, {
+            const response = await fetch(`https://genotech-backend.vercel.app/api/admin/users/${userId}`, {
                 method: 'DELETE'
             });
 
