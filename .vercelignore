@@ -1,25 +1,17 @@
+# Ignore a pasta 3D inteira
+Frontend/pages/3D/
 
+# Outras regras de ignore
+node_modules/
+.vscode/
+.idea/
 .env
+*.log
+*.bak
+*.tmp
 *.blend
 *.tga
 *.glb
 
-# Ignore node_modules
-node_modules/
-
-# Ignore todos os arquivos e pastas dentro de Frontend/pages/3D/examples, exceto os essenciais
-!Frontend/pages/3D/examples/*
-!Frontend/pages/3D/examples/index.html
-!Frontend/pages/3D/examples/js/
-!Frontend/pages/3D/examples/css/
-
-# Ignore arquivos grandes de assets
-Frontend/assets assuntos/*.svg
-
-
+# Assets grandes e específicos
 Frontend/pages/Conteudos Estrutura e Função do DNA/Estrutura Molecular do DNA/Assets copy/*.svg
-    node_modules/
-    .env
-    *.blend
-    *.tga
-    *.glb
