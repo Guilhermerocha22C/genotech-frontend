@@ -12,7 +12,7 @@ verificarTema(body, botaoTema);
 async function exibirRanking() {
     try {
         console.log('Iniciando busca do ranking...');
-        const response = await fetch('genotechfullstack.vercel.app/api/ranking');
+        const response = await fetch('https://genotechfullstack.vercel.app/api/ranking');
         const data = await response.json();
         console.log('Dados recebidos:', data);
 
@@ -24,7 +24,7 @@ async function exibirRanking() {
                 console.log('profile_image_url:', user.profile_image_url);
 
                 const fotoURL = user.profile_image_url
-                    ? `genotechfullstack.vercel.app${user.profile_image_url}`
+                    ? `https://genotechfullstack.vercel.app${user.profile_image_url}`
                     : '/Frontend/Assets home/imagem-do-usuario-com-fundo-preto.png';
 
                 const isDefault = !user.profile_image_url;

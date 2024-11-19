@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         try {
-            const response = await fetch('genotechfullstack.vercel.app/api/login', {
+            const response = await fetch('https://genotechfullstack.vercel.app/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

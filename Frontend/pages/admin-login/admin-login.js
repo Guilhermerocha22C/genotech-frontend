@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('password').value;
         
         try {
-            const response = await fetch('genotechfullstack.vercel.app/api/admin/login', {
+            const response = await fetch('https://genotechfullstack.vercel.app/api/admin/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -31,7 +31,7 @@ document.getElementById('redefinirSenhaForm').addEventListener('submit', async (
     }
     
     try {
-        const response = await fetch('genotechfullstack.vercel.app/api/redefinir-senha', {
+        const response = await fetch('https://genotechfullstack.vercel.app/api/redefinir-senha', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

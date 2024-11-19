@@ -68,7 +68,7 @@ async function atualizarUsuario(acertos, xpIncremento) {
         console.log('Acertos:', acertos);
         console.log('XP Incremento:', xpIncremento);
 
-        const response = await fetch('genotechfullstack.vercel.app/api/atualizar-usuario', {
+        const response = await fetch('https://genotechfullstack.vercel.app/api/atualizar-usuario', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -95,7 +95,7 @@ async function atualizarUsuario(acertos, xpIncremento) {
 async function exibirRanking() {
     try {
         console.log('Buscando ranking...');
-        const response = await fetch('genotechfullstack.vercel.app/api/ranking');
+        const response = await fetch('https://genotechfullstack.vercel.app/api/ranking');
         console.log('Status da resposta do ranking:', response.status);
         
         if (!response.ok) {
