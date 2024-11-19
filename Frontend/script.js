@@ -2,7 +2,7 @@ AOS.init();
  
 function logout() {
     localStorage.removeItem('userData');
-    window.location.href = '/Frontend/pages/Login/login.html';
+    window.location.href = '/pages/Login/login.html';
 }
 
 

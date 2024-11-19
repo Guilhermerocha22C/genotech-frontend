@@ -64,7 +64,7 @@ async function loadUserData() {
     const userData = localStorage.getItem('userData');
     if (!userData) {
         console.log('Usuário não está logado');
-        window.location.href = '/Frontend/pages/Login/login.html';
+        window.location.href = '/pages/Login/login.html';
         return;
     }
 
@@ -113,14 +113,14 @@ if (updatedUser.isAdmin) {
 }
 
 function setDefaultImage() {
-    const defaultImagePath = '/Frontend/Assets home/imagem-do-usuario-com-fundo-preto.png';
+    const defaultImagePath = '/Assets home/imagem-do-usuario-com-fundo-preto.png';
     console.log('Definindo imagem padrão:', defaultImagePath);
     document.getElementById('profileImage').src = defaultImagePath;
 }
 
 function logout() {
     localStorage.removeItem('userData');
-    window.location.href = '/Frontend/pages/Login/login.html';
+    window.location.href = '/pages/Login/login.html';
 }
 
 window.addEventListener('load', loadUserData);
