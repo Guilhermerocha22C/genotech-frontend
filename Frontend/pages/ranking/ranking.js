@@ -25,7 +25,7 @@ async function exibirRanking() {
 
                 const fotoURL = user.profile_image_url
                     ? `https://genotech-backend.vercel.app${user.profile_image_url}`
-                    : '/Frontend/Assets home/imagem-do-usuario-com-fundo-preto.png';
+                    : '/Assets home/imagem-do-usuario-com-fundo-preto.png';
 
                 const isDefault = !user.profile_image_url;
                 const adminStar = user.isAdmin ? 
@@ -43,7 +43,7 @@ console.log('Admin Star HTML:', adminStar);
                         <img src="${fotoURL}" 
                              alt="Foto de Perfil de ${user.nome}" 
                              class="profile-pic ${isDefault ? 'default-pic' : ''}"
-                             onerror="this.src='/Frontend/Assets home/imagem-do-usuario-com-fundo-preto.png';">
+                             onerror="this.src='/Assets home/imagem-do-usuario-com-fundo-preto.png';">
                         <span class="position">${index + 1}</span>
                         <span class="name">${user.nome} ${adminStar}</span>
                         <span class="points">${user.pontos} XP</span>

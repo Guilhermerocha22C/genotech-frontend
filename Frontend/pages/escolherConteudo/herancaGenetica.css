@@ -236,7 +236,7 @@ span {
 }
 
 .header {
-    background: url('/Frontend/assets assuntos/Dna.svg') no-repeat center center;
+    background: url('/assets assuntos/Dna.svg') no-repeat center center;
     background-size: cover;
     flex: 1; 
     display: flex;
@@ -298,19 +298,19 @@ span {
 
 
 .card:nth-child(1) {
-    background-image: url('/Frontend/assets assuntos/5.svg');
+    background-image: url('/assets assuntos/5.svg');
 }
 
 .card:nth-child(2) {
-    background-image: url('/Frontend/assets assuntos/6.svg');
+    background-image: url('/assets assuntos/6.svg');
 }
 
 .card:nth-child(3) {
-    background-image: url('/Frontend/assets assuntos/7.svg');
+    background-image: url('/assets assuntos/7.svg');
 }
 
 .card:nth-child(4) {
-    background-image: url('/Frontend/assets assuntos/8.svg');
+    background-image: url('/assets assuntos/8.svg');
 }
 
 .card-body {

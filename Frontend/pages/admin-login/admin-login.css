@@ -21,7 +21,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/Frontend/pages/admin-login/assets/Background.avif');
+    background-image: url('/pages/admin-login/assets/Background.avif');
     background-size: cover;
     background-position: center;
     filter: brightness(35%); 

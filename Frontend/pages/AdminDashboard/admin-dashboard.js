@@ -6,7 +6,7 @@ let currentPage = 1;
 document.addEventListener('DOMContentLoaded', () => {
     const admin = JSON.parse(localStorage.getItem('admin'));
     if (!admin) {
-        window.location.href = '/Frontend/pages/admin-login/admin-login.html';
+        window.location.href = '/pages/admin-login/admin-login.html';
         return;
     }
 
@@ -261,7 +261,7 @@ async function logout() {
             timer: 2000,
             showConfirmButton: false
         });
-        window.location.href = '/Frontend/pages/admin-login/admin-login.html';
+        window.location.href = '/pages/admin-login/admin-login.html';
     } catch (error) {
         console.error('Erro durante o logout:', error);
         Swal.fire({

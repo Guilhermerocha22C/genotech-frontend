@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     showConfirmButton: false
                 });
                 
-                window.location.href = '/Frontend/pages/AdminDashboard/admin-dashboard.html';
+                window.location.href = '/pages/AdminDashboard/admin-dashboard.html';
             } else {
                 // Alerta de erro no login
                 Swal.fire({
