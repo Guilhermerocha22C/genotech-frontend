@@ -28,7 +28,7 @@ function alterarAssunto() {
         .replace(/[\u0300-\u036f]/g, "")
         .replace(/\s+/g, '-');
 
-    const caminhoImagem = `/Frontend/pages/quiz/assets/images/icon-${assuntoFormatado}.svg`;
+    const caminhoImagem = `/pages/quiz/assets/images/icon-${assuntoFormatado}.svg`;
 
     divIcone.classList.add(assuntoFormatado);
     iconeImg.setAttribute("src", caminhoImagem);
@@ -138,7 +138,7 @@ async function finalizar() {
     } else {
         console.error('ID do usuário não encontrado no localStorage');
         alert("Erro ao obter ID do usuário. Por favor, faça login novamente.");
-        window.location.href = "/Frontend/pages/Login/login.html";
+        window.location.href = "/pages/Login/login.html";
         return;
     }
     

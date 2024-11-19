@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.setItem('userId', data.user.id); 
                 console.log('Dados do usuário após login:', data.user);
                 console.log('ID do usuário armazenado:', data.user.id);
-                window.location.href = '/Frontend/index.html'; 
+                window.location.href = '/index.html'; 
             } else {
                 // Login falhou
                 document.getElementById('message').textContent = data.message;

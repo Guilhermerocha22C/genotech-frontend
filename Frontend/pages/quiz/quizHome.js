@@ -20,7 +20,7 @@ function selecionarAssunto(evento) {
     if (span) {
         const assunto = span.innerText;
         localStorage.setItem("assunto", assunto);
-        window.location.href = "/Frontend/pages/quiz/pages/quiz/quiz.html";
+        window.location.href = "/pages/quiz/pages/quiz/quiz.html";
     } else {
         console.error("Elemento span não encontrado no botão.");
     }

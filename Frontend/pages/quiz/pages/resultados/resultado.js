@@ -23,7 +23,7 @@ function alterarAssunto() {
         const assuntoSrc = assuntoClass.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
         divIcone.classList.add(assuntoClass);
-        iconeImg.setAttribute("src", `/Frontend/pages/quiz/assets/images/icon-${assuntoSrc}.svg`);
+        iconeImg.setAttribute("src", `/pages/quiz/assets/images/icon-${assuntoSrc}.svg`);
         iconeImg.setAttribute("alt", `ícone de ${assunto}`);
         assuntoTitulo.innerText = assunto;
     }

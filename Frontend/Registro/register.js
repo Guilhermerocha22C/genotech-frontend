@@ -39,7 +39,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
             messageElement.style.color = 'green';
             // Redirecionar para a página de login após um breve delay
             setTimeout(() => {
-                window.location.href = '/Frontend/pages/Login/login.html';
+                window.location.href = '/pages/Login/login.html';
             }, 2000);
         } else {
             if (data.message === "Usuário já existe") {
