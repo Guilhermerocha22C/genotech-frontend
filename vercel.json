@@ -1,27 +1,35 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "Backend/src/app.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "Frontend/**",
-      "use": "@vercel/static"
-    }
+  {
+  "src": "Backend/src/app.js",
+  "use": "@vercel/node"
+  },
+  {
+  "src": "Frontend/**",
+  "use": "@vercel/static"
+  }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "Backend/src/app.js"
-    },
-    {
-      "src": "/Frontend/(.*)",
-      "dest": "/Frontend/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/Frontend/index.html"
-    }
+  {
+  "src": "/api/(.)",
+  "dest": "Backend/src/app.js"
+  },
+  {
+  "src": "/Frontend/pages/3D/examples/Moleculas3D.html",
+  "dest": "/Frontend/pages/3D/examples/Moleculas3D.html"
+  },
+  {
+  "src": "/Frontend/pages/3D/examples/(.)",
+  "dest": "/Frontend/pages/3D/examples/$1"
+  },
+  {
+  "src": "/Frontend/(.)",
+  "dest": "/Frontend/$1"
+  },
+  {
+  "src": "/(.)",
+  "dest": "/Frontend/$1"
+  }
   ]
-}
+  }
