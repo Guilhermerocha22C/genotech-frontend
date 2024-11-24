@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function getResponseFromAPI(message) {
         showTypingIndicator();
         try {
-            const response = await fetch('/api/chat', {
+            const response = await fetch('https://genotech-backend.vercel.app/api/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
