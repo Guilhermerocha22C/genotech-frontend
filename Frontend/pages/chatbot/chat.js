@@ -71,4 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     appendMessage('Bem-vindo ao GenoChat! Como posso ajudar você hoje?', 'bot-message');
+
+    // Função para limpar o chat
+    window.clearChat = function() {
+        chatBox.innerHTML = '';
+        appendMessage('Chat limpo. Como posso ajudar você agora?', 'bot-message');
+    }
 });
