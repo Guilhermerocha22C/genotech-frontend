@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const chatBox = document.getElementById('chat-box');
     const userInput = document.getElementById('user-input');
-    const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+    const sendButton = document.getElementById('send-button');
+    const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY
     const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
+
+    sendButton.onclick = sendMessage;
 
     async function sendMessage() {
         const userMessage = userInput.value.trim();
@@ -76,6 +79,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     appendMessage('Bem-vindo ao GenoChat! Como posso ajudar você hoje?', 'bot-message');
-    // Certifique-se de que a função showOptions está definida ou remova a chamada
-    // showOptions();
 });
