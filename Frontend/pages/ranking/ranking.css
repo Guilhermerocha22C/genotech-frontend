@@ -993,3 +993,166 @@ body.escuro .ranking-list li:nth-child(3) .position::before {
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
+
+@media (max-width: 768px) {
+    .fechar-button {
+        top: 15px;
+        left: 15px;
+    }
+
+    .fechar-button img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fechar-button {
+        top: 10px;
+        left: 10px;
+    }
+
+    .fechar-button img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .fechar-button {
+        top: 5px;
+        left: 5px;
+    }
+
+    .fechar-button img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .ranking {
+        padding: 30px;
+    }
+
+    main h2 {
+        font-size: 36px;
+    }
+
+    .ranking-list li {
+        padding: 15px;
+    }
+
+    .profile-pic {
+        width: 60px;
+        height: 60px;
+    }
+
+    .position {
+        font-size: 20px;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .points {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ranking {
+        padding: 20px;
+        max-height: 60vh;
+    }
+
+    main h2 {
+        font-size: 28px;
+    }
+
+    .ranking-list li {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .profile-pic {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .position {
+        font-size: 18px;
+        width: auto;
+        margin-right: 10px;
+    }
+
+    .name {
+        font-size: 16px;
+        flex-basis: 100%;
+        order: 3;
+        margin-top: 5px;
+    }
+
+    .points {
+        font-size: 14px;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .ranking {
+        padding: 15px;
+    }
+
+    main h2 {
+        font-size: 24px;
+    }
+
+    .ranking-list li {
+        margin-bottom: 15px;
+    }
+
+    .profile-pic {
+        width: 40px;
+        height: 40px;
+    }
+
+    .position {
+        font-size: 16px;
+    }
+
+    .name {
+        font-size: 14px;
+    }
+
+    .points {
+        font-size: 12px;
+    }
+
+    .admin-star {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 320px) {
+    main h2 {
+        font-size: 20px;
+    }
+
+    .ranking-list li {
+        padding: 8px;
+    }
+
+    .profile-pic {
+        width: 35px;
+        height: 35px;
+    }
+
+    .position, .name, .points {
+        font-size: 12px;
+    }
+}

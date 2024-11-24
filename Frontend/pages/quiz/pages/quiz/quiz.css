@@ -716,3 +716,79 @@ main {
     }
 }
 
+@media (max-width: 1200px) {
+    .fechar-button {
+        top: 15px;
+        left: 15px;
+    }
+
+    .fechar-button img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 992px) {
+    .fechar-button {
+        top: 12px;
+        left: 12px;
+    }
+
+    .fechar-button img {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fechar-button {
+        top: 10px;
+        left: 10px;
+        padding: 8px;
+    }
+
+    .fechar-button img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .fechar-button {
+        top: 8px;
+        left: 8px;
+        padding: 7px;
+    }
+
+    .fechar-button img {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fechar-button {
+        top: 6px;
+        left: 6px;
+        padding: 6px;
+    }
+
+    .fechar-button img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .fechar-button {
+        top: 5px;
+        left: 5px;
+        padding: 5px;
+    }
+
+    .fechar-button img {
+        width: 18px;
+        height: 18px;
+    }
+}
+

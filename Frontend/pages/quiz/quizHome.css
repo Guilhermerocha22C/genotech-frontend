@@ -488,4 +488,54 @@ header {
     }
 }
 
+@media (max-width: 1024px) {
+    .fechar-button {
+        top: 15px;
+        left: 15px;
+    }
+
+    .fechar-button img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fechar-button {
+        top: 10px;
+        left: 10px;
+    }
+
+    .fechar-button img {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fechar-button {
+        top: 8px;
+        left: 8px;
+        padding: 8px;
+    }
+
+    .fechar-button img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .fechar-button {
+        top: 5px;
+        left: 5px;
+        padding: 6px;
+    }
+
+    .fechar-button img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
         

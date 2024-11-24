@@ -394,4 +394,200 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 1200px) {
+    html {
+        font-size: 14px;
+    }
+
+    .sidebar {
+        width: 15rem;
+    }
+
+    .assuntos-section {
+        margin-left: 15rem;
+        width: calc(100% - 15rem);
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 1rem;
+    }
+
+    .logo {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .logo img {
+        width: 12rem;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .menu a {
+        width: auto;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+    }
+
+    .baixo {
+        margin-top: 1rem;
+    }
+
+    .assuntos-section {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+        gap: 1rem;
+    }
+
+    .card {
+        height: 11rem;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 12px;
+    }
+
+    .sidebar {
+        padding: 0.8rem;
+    }
+
+    .logo img {
+        width: 10rem;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .menu a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .assuntos-section .text {
+        margin-bottom: 1.5rem;
+    }
+
+    .text h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .text p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        height: 10rem;
+    }
+
+    .Btn {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .tooltip {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        padding: 0.6rem;
+    }
+
+    .logo img {
+        width: 8rem;
+    }
+
+    .menu a {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    .text h1 {
+        font-size: 1.5rem;
+    }
+
+    .text p {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        height: 9rem;
+    }
+
+    .Btn {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+}
+
+@media (max-width: 320px) {
+    html {
+        font-size: 10px;
+    }
+
+    .logo img {
+        width: 7rem;
+    }
+
+    .menu a {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .text h1 {
+        font-size: 1.3rem;
+    }
+
+    .text p {
+        font-size: 0.85rem;
+    }
+
+    .card {
+        height: 8rem;
+    }
+}
+
 

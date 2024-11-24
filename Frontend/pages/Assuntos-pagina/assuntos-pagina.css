@@ -234,7 +234,7 @@ body {
 }
 
 .header {
-    background: url('/assets assuntos/Cromossomo.svg') no-repeat center center;
+    background: url('/Frontend/assets assuntos/Cromossomo.svg') no-repeat center center;
     background-size: cover;
     flex: 1; 
     display: flex;
@@ -296,19 +296,19 @@ body {
 
 
 .card:nth-child(1) {
-    background-image: url('/assets assuntos/Estrutura e função dna.svg');
+    background-image: url('/Frontend/assets assuntos/Estrutura e função dna.svg');
 }
 
 .card:nth-child(2) {
-    background-image: url('/assets assuntos/Herança Genética.svg');
+    background-image: url('/Frontend/assets assuntos/Herança Genética.svg');
 }
 
 .card:nth-child(3) {
-    background-image: url('/assets assuntos/Engenharia Genética.svg');
+    background-image: url('/Frontend/assets assuntos/Engenharia Genética.svg');
 }
 
 .card:nth-child(4) {
-    background-image: url('/assets assuntos/Evolução Molecular.svg');
+    background-image: url('/Frontend/assets assuntos/Evolução Molecular.svg');
 }
 
 .card-body {
@@ -394,5 +394,136 @@ body {
 
     .header ul li a {
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .logo {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .logo img {
+        width: 12rem;
+        margin-bottom: 0;
+    }
+
+    .logo span {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu a {
+        width: auto;
+        padding: 0.8rem;
+    }
+
+    .baixo {
+        margin-top: 0;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .header {
+        height: 300px;
+    }
+
+    .overlay {
+        gap: 2rem;
+    }
+
+    .header h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-deck {
+        justify-content: center;
+    }
+
+    .card {
+        width: calc(50% - 1.25rem);
+        height: 250px;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .header ul li a {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+        height: 200px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header ul li {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .assuntos-section h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Ajustes adicionais para melhor responsividade */
+.card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.card-title {
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+@media (max-width: 360px) {
+    .logo img {
+        width: 10rem;
+    }
+
+    .menu a {
+        font-size: 0.9rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
     }
 }
