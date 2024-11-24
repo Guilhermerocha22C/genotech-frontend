@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatBox = document.getElementById('chat-box');
     const userInput = document.getElementById('user-input');
     const sendButton = document.getElementById('send-button');
-    const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY; 
-    const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
 
     sendButton.onclick = sendMessage;
 
@@ -27,18 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
     async function getResponseFromAPI(message) {
         showTypingIndicator();
         try {
-            const response = await fetch(`${API_URL}?key=${API_KEY}`, {
+            const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    contents: [{
-                        parts: [{
-                            text: `Você é um assistente especializado em genética e biotecnologia para o site GenoTech. Responda à seguinte pergunta: ${message}`
-                        }]
-                    }]
-                })
+                body: JSON.stringify({ message })
             });
 
             const data = await response.json();
