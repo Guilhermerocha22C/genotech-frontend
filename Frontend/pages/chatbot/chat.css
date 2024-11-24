@@ -5,26 +5,16 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #2d2a5d; 
+    background-color: #2d2a5d;
 }
 
 .logo {
     position: absolute;
-    top: 15px; 
-    left: 35px; 
-    width: 300px; 
+    top: 15px;
+    left: 35px;
+    width: 300px;
     height: auto;
-    z-index: 1000; 
-}
-
-@media (max-width: 767px) {
-    .logo {
-        position: fixed; 
-        top: 15%; 
-        left: 50%; 
-        transform: translate(-50%, -50%); 
-        width: 250px; 
-    }
+    z-index: 1000;
 }
 
 .loader {
@@ -44,124 +34,16 @@ body {
     display: none;
 }
 
-.three-body {
-    --uib-size: 35px;
-    --uib-speed: 0.8s;
-    --uib-color: #5D3FD3;
-    position: relative;
-    display: inline-block;
-    height: var(--uib-size);
-    width: var(--uib-size);
-    animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
-}
-
-.three-body__dot {
-    position: absolute;
-    height: 100%;
-    width: 30%;
-}
-
-.three-body__dot:after {
-    content: '';
-    position: absolute;
-    height: 0%;
-    width: 100%;
-    padding-bottom: 100%;
-    background-color: var(--uib-color);
-    border-radius: 50%;
-}
-
-.three-body__dot:nth-child(1) {
-    bottom: 5%;
-    left: 0;
-    transform: rotate(60deg);
-    transform-origin: 50% 85%;
-}
-
-.three-body__dot:nth-child(1)::after {
-    bottom: 0;
-    left: 0;
-    animation: wobble1 var(--uib-speed) infinite ease-in-out;
-    animation-delay: calc(var(--uib-speed) * -0.3);
-}
-
-.three-body__dot:nth-child(2) {
-    bottom: 5%;
-    right: 0;
-    transform: rotate(-60deg);
-    transform-origin: 50% 85%;
-}
-
-.three-body__dot:nth-child(2)::after {
-    bottom: 0;
-    left: 0;
-    animation: wobble1 var(--uib-speed) infinite
-        calc(var(--uib-speed) * -0.15) ease-in-out;
-}
-
-.three-body__dot:nth-child(3) {
-    bottom: -5%;
-    left: 0;
-    transform: translateX(116.666%);
-}
-
-.three-body__dot:nth-child(3)::after {
-    top: 0;
-    left: 0;
-    animation: wobble2 var(--uib-speed) infinite ease-in-out;
-}
-
-@keyframes spin78236 {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes wobble1 {
-    0%, 100% {
-        transform: translateY(0%) scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(-66%) scale(0.65);
-        opacity: 0.8;
-    }
-}
-
-@keyframes wobble2 {
-    0%, 100% {
-        transform: translateY(0%) scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(66%) scale(0.65);
-        opacity: 0.8;
-    }
-}
-
-@media (max-width: 48rem) {
-    .loader {
-        padding: 10px; 
-    }
-
-    .three-body {
-        --uib-size: 25px; 
-    }
-}
-
-
 .chat-container {
-    background-color: rgba(31, 27, 69, 0.9); 
-    width: 400px; 
-    height: 600px; 
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(31, 27, 69, 0.9);
+    width: 700px; 
+    height: 750px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    animation: slideIn 0.6s ease-out;
 }
 
 @keyframes slideIn {
@@ -175,18 +57,14 @@ body {
     }
 }
 
-.chat-container {
-    animation: slideIn 0.6s ease-out;
-}
-
-
 .chat-header {
-    background-color: #6c63ff; 
+    background-color: #6c63ff;
     color: white;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #4c4a9c;
 }
 
 .bot-info {
@@ -195,40 +73,41 @@ body {
 }
 
 .bot-photo {
-    width: 40px; 
-    height: 40px; 
-    border-radius: 50%; 
-    margin-right: 10px; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
     border: 1px dashed rgb(66, 0, 128);
 }
 
-.verified-icon {
-    margin-left: 5px;
-    font-size: 1.2em;
-}
-
 .verified-icon img {
-    width: 20px; 
+    width: 20px;
     height: 20px;
 }
 
 .clear-button {
-    background-color: #ff4c4c; 
+    background-color: #ff4c4c;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s;
+}
+
+.clear-button:hover {
+    background-color: #e04343;
 }
 
 .chat-box {
     flex: 1;
-    padding: 10px;
+    padding: 15px;
     overflow-y: auto;
+    background-color: #222;
 }
 
 .chat-message {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     opacity: 0;
     animation: fadeIn 0.5s forwards;
 }
@@ -240,64 +119,52 @@ body {
 }
 
 .bot-message {
-    background-color: #4c4a9c; 
+    background-color: #4c4a9c;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border-radius: 10px;
     text-align: left;
+    line-height: 1.6;
+    white-space: pre-wrap;
 }
 
 .user-message {
-    background-color: #6c63ff; 
+    background-color: #6c63ff;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border-radius: 10px;
     text-align: right;
+    line-height: 1.6;
 }
 
 .input-box {
     display: flex;
-    padding: 10px;
-    border-top: 1px solid #4c4a9c; 
+    padding: 15px;
+    border-top: 1px solid #4c4a9c;
+    background-color: #2d2a5d;
 }
 
 input {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #4c4a9c; 
+    padding: 12px;
+    border: 1px solid #4c4a9c;
     border-radius: 5px;
-    background-color: #2d2a5d; 
+    background-color: #2d2a5d;
     color: white;
+    margin-right: 10px;
+    outline: none;
 }
 
 button {
-    background-color: #6c63ff; 
+    background-color: #6c63ff;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
-    margin-left: 10px;
-    cursor: pointer;
-}
-
-.options {
-    display: flex;
-    flex-direction: column;
-}
-
-.options button {
-    background-color: #8e8ed1; 
-    color: #333;
-    border: none;
-    padding: 10px;
-    margin: 5px 0;
+    padding: 12px 15px;
     border-radius: 5px;
     cursor: pointer;
-    text-align: left;
+    transition: background 0.3s;
 }
 
-.options button:hover {
-    background-color: #7a7acd;
+button:hover {
+    background-color: #5a57d1;
 }
-
-

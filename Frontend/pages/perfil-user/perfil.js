@@ -38,11 +38,14 @@ async function updateProfile() {
             body: formData
         });
 
+        const responseData = await response.text();
+        console.log('Resposta completa do servidor:', responseData);
+
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`HTTP error! status: ${response.status}, message: ${responseData}`);
         }
 
-        const data = await response.json();
+        const data = JSON.parse(responseData);
         if (data.success) {
             userData.nome = newName;
             if (data.imageUrl) {

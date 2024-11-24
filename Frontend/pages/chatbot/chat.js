@@ -1,55 +1,68 @@
+const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
+
 const chatBox = document.getElementById('chat-box');
 const userInput = document.getElementById('user-input');
 
-const responses = {
-    1: "Acesse a aba FAQ no menu do site para ver as perguntas frequentes e suas respostas.",
-    2: "Você pode explorar tanto a Tabela Periódica quanto as moléculas em 3D na aba Genética 3D do nosso site. Lá, você encontrará uma visualização interativa da Tabela Periódica e poderá ver modelos 3D detalhados de várias moléculas.",
-    3: "Para suporte, você pode entrar em contato conosco através do e-mail suporte@genotech.com ou utilizar o formulário de contato disponível na seção Fale Conosco do site.",
-    4: "Por favor, descreva sua dúvida e iremos ajudá-lo o mais rápido possível."
-};
-
-function sendMessage() {
+async function sendMessage() {
     const userMessage = userInput.value.trim();
     if (userMessage !== "") {
         appendMessage(userMessage, 'user-message');
-        respondToMessage(userMessage);
+        await getResponseFromAPI(userMessage);
         userInput.value = "";
     }
 }
 
-function sendMessageOption(option) {
-    respondToMessage(option);
+async function sendMessageOption(option) {
+    const optionText = document.querySelector(`button[onclick="sendMessageOption(${option})"]`).textContent;
+    appendMessage(optionText, 'user-message');
+    await getResponseFromAPI(optionText);
 }
 
 function appendMessage(message, className) {
     const messageElement = document.createElement('div');
     messageElement.className = `chat-message ${className}`;
-    messageElement.textContent = message;
+    messageElement.innerHTML = message; 
     chatBox.appendChild(messageElement);
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-function respondToMessage(message) {
-    let response = "Desculpe, eu não entendi isso.";
-    if (typeof message === 'number' && responses[message]) {
-        response = responses[message];
-    } else if (responses[message]) {
-        response = responses[message];
-    }
-
+async function getResponseFromAPI(message) {
     showTypingIndicator();
-    setTimeout(() => {
+    try {
+        const response = await fetch(`${API_URL}?key=${API_KEY}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                contents: [{
+                    parts: [{
+                        text: `Você é um assistente especializado em genética e biotecnologia para o site GenoTech. Responda à seguinte pergunta: ${message}`
+                    }]
+                }]
+            })
+        });
+
+        const data = await response.json();
         hideTypingIndicator();
-        appendBotResponse(response);
-    }, 1000);
+        if (data.candidates && data.candidates[0].content) {
+            appendBotResponse(data.candidates[0].content.parts[0].text);
+        } else {
+            appendBotResponse("Desculpe, não consegui processar sua solicitação.");
+        }
+    } catch (error) {
+        hideTypingIndicator();
+        appendBotResponse(`Erro: ${error.message}`);
+    }
 }
 
 function appendBotResponse(response) {
-    const lastMessage = chatBox.querySelector('.chat-message.bot-message:last-child');
-    if (lastMessage && lastMessage.textContent === response) {
-        return;
-    }
-    appendMessage(response, 'bot-message');
+    const formattedResponse = response
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
+        .replace(/__(.*?)__/g, '<u>$1</u>'); 
+
+    appendMessage(formattedResponse, 'bot-message');
 }
 
 function showTypingIndicator() {
@@ -81,16 +94,8 @@ function clearChat() {
     }, 3000);
 }
 
-function showOptions() {
-    const optionsHtml = `
-        <div class="options" id="options">
-            <button onclick="sendMessageOption(1)">Onde posso encontrar as perguntas frequentes (FAQ)?</button>
-            <button onclick="sendMessageOption(2)">Onde posso explorar a Tabela Periódica e moléculas em 3D?</button>
-            <button onclick="sendMessageOption(3)">Como posso entrar em contato com o suporte?</button>
-            <button onclick="sendMessageOption(4)">Tenho outra dúvida</button>
-        </div>
-    `;
-    const optionsContainer = document.createElement('div');
-    optionsContainer.innerHTML = optionsHtml;
-    chatBox.appendChild(optionsContainer);
-}
+
+document.addEventListener('DOMContentLoaded', () => {
+    appendMessage('Bem-vindo ao GenoChat! Como posso ajudar você hoje?', 'bot-message');
+    showOptions();
+});
