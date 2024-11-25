@@ -439,7 +439,7 @@
                 popup.style.display = 'block';
                 setTimeout(() => {
                     popup.style.display = 'none';
-                }, 4000); // Fecha após 4 segundos
+                }, 4000);
             }, delay);
         }
     
@@ -457,7 +457,7 @@
                 localStorage.removeItem('justLoggedIn'); // Remove a flag após mostrar
             } else {
                 // Se não há login recente, mostra o popup do chatbot
-                showPopup(chatbotPopup, 3000); // Mostra após 3 segundos
+                showPopup(chatbotPopup, 1800); 
             }
         }
     
