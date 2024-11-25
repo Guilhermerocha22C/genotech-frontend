@@ -1,28 +1,26 @@
 AOS.init();
- 
-function logout() {
-    localStorage.removeItem('userData');
+
+function isAuthenticated() {
+    return !!localStorage.getItem('user');
+}
+
+function redirectToLogin() {
     window.location.href = '/pages/Login/login.html';
 }
 
-if (!localStorage.getItem('user')) {
-    window.location.href = '/pages/Login/login.html';
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    
-    if (!user) {
-        // Se não houver usuário logado, redireciona para a página de login
-        window.location.href = '/pages/Login/login.html';
-    } else {
-        // Exibe mensagem de boas-vindas
-        document.getElementById('welcomeMessage').textContent = `Bem-vindo, ${user.nome}!`;
+function initHomePage() {
+    if (!isAuthenticated()) {
+        redirectToLogin();
+        return;
     }
 
-    // Lógica para o botão de logout
+    const user = JSON.parse(localStorage.getItem('user'));
+    document.getElementById('welcomeMessage').textContent = `Bem-vindo, ${user.nome}!`;
+
     document.getElementById('logoutButton').addEventListener('click', () => {
         localStorage.removeItem('user');
-        window.location.href = '/pages/Login/login.html';
+        redirectToLogin();
     });
-});
+}
+
+document.addEventListener('DOMContentLoaded', initHomePage);
