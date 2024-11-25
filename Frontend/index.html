@@ -19,6 +19,15 @@
 
 <body>
 
+    <div id="chatbotPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Novo Chatbot com IA Gemini!</h2>
+            <p>Experimente nosso novo chatbot alimentado pela IA Gemini. Ele está pronto para responder suas perguntas e ajudar você!</p>
+            <button id="gotoChatbot">Acessar Chatbot</button>
+        </div>
+    </div>
+
     <div class="loader" id="loader">
         <div class="three-body">
             <div class="three-body__dot"></div>
@@ -406,6 +415,32 @@
                 behavior: 'smooth' 
             });
         });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('chatbotPopup');
+    const closeBtn = document.getElementsByClassName('close')[0];
+    const gotoChatbotBtn = document.getElementById('gotoChatbot');
+
+    setTimeout(() => {
+        popup.style.display = 'block';
+    }, 2000);
+
+    closeBtn.onclick = function() {
+        popup.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == popup) {
+            popup.style.display = 'none';
+        }
+    }
+
+    gotoChatbotBtn.onclick = function() {
+        window.location.href = '/pages/chatbot/chat.html'; 
+    }
+});
     </script>
     
     <script src="script.js" defer></script>
