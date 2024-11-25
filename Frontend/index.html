@@ -19,6 +19,14 @@
 
 <body>
 
+    <div id="welcomeMessage" class="welcome-popup">
+        <div class="welcome-content">
+            <span class="close">&times;</span>
+            <h2>Bem-vindo!</h2>
+            <p id="userWelcomeText"></p>
+        </div>
+    </div>
+
     <div id="chatbotPopup" class="popup">
         <div class="popup-content">
             <span class="close">&times;</span>
@@ -440,6 +448,38 @@
     gotoChatbotBtn.onclick = function() {
         window.location.href = '/pages/chatbot/chat.html'; 
     }
+});
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const welcomePopup = document.getElementById('welcomeMessage');
+    const closeBtn = welcomePopup.querySelector('.close');
+    const userWelcomeText = document.getElementById('userWelcomeText');
+
+    function showWelcomeMessage() {
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        if (userData && userData.nome) {
+            userWelcomeText.textContent = `Olá, ${userData.nome}! Bem-vindo de volta à Geno Tech.`;
+            welcomePopup.style.display = 'block';
+
+            setTimeout(() => {
+                welcomePopup.style.display = 'none';
+            }, 5000);
+        }
+    }
+
+    closeBtn.onclick = function() {
+        welcomePopup.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == welcomePopup) {
+            welcomePopup.style.display = 'none';
+        }
+    }
+
+    showWelcomeMessage();
 });
     </script>
     
