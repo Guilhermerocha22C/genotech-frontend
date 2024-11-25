@@ -11,29 +11,14 @@ verificarTema(body, botaoTema);
 
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
-    const passwordInput = document.getElementById('password');
-    const confirmPasswordInput = document.getElementById('confirmPassword');
-    const passwordMismatchMessage = document.getElementById('passwordMismatch');
 
     loginForm.addEventListener('submit', async function(e) {
         e.preventDefault(); 
 
         console.log('Formulário enviado');
 
-        if (!passwordInput || !confirmPasswordInput) {
-            console.error('Elementos de senha não encontrados.');
-            return;
-        }
-
-        if (passwordInput.value !== confirmPasswordInput.value) {
-            passwordMismatchMessage.textContent = 'As senhas não coincidem';
-            return; 
-        } else {
-            passwordMismatchMessage.textContent = ''; 
-        }
-
         const email = document.getElementById('email').value;
-        const password = passwordInput.value;
+        const password = document.getElementById('password').value;
         const recaptchaResponse = grecaptcha.getResponse();
 
         if (!recaptchaResponse) {

@@ -15,12 +15,21 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     const nome = document.getElementById('nome').value.trim();
     const email = document.getElementById('email').value.trim();
     const senha = document.getElementById('senha').value;
+    const confirmSenha = document.getElementById('confirmSenha').value;
     const messageElement = document.getElementById('message');
+    const passwordMismatchElement = document.getElementById('passwordMismatch');
     
-    if (!nome || !email || !senha) {
+    if (!nome || !email || !senha || !confirmSenha) {
         messageElement.textContent = 'Por favor, preencha todos os campos.';
         messageElement.style.color = 'red';
         return;
+    }
+
+    if (senha !== confirmSenha) {
+        passwordMismatchElement.textContent = 'As senhas não coincidem';
+        return;
+    } else {
+        passwordMismatchElement.textContent = '';
     }
     
     try {
