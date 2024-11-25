@@ -425,62 +425,61 @@
         });
     </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const popup = document.getElementById('chatbotPopup');
-    const closeBtn = document.getElementsByClassName('close')[0];
-    const gotoChatbotBtn = document.getElementById('gotoChatbot');
-
-    setTimeout(() => {
-        popup.style.display = 'block';
-    }, 2000);
-
-    closeBtn.onclick = function() {
-        popup.style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-        if (event.target == popup) {
-            popup.style.display = 'none';
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Código para a mensagem de boas-vindas
+        const welcomePopup = document.getElementById('welcomeMessage');
+        const welcomeCloseBtn = welcomePopup.querySelector('.close');
+        const userWelcomeText = document.getElementById('userWelcomeText');
+    
+        function showWelcomeMessage() {
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            if (userData && userData.nome) {
+                userWelcomeText.textContent = `Olá, ${userData.nome}! Bem-vindo de volta à Geno Tech.`;
+                welcomePopup.style.display = 'block';
+    
+                setTimeout(() => {
+                    welcomePopup.style.display = 'none';
+                }, 5000);
+            }
         }
-    }
-
-    gotoChatbotBtn.onclick = function() {
-        window.location.href = '/pages/chatbot/chat.html'; 
-    }
-});
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const welcomePopup = document.getElementById('welcomeMessage');
-    const closeBtn = welcomePopup.querySelector('.close');
-    const userWelcomeText = document.getElementById('userWelcomeText');
-
-    function showWelcomeMessage() {
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        if (userData && userData.nome) {
-            userWelcomeText.textContent = `Olá, ${userData.nome}! Bem-vindo de volta à Geno Tech.`;
-            welcomePopup.style.display = 'block';
-
-            setTimeout(() => {
-                welcomePopup.style.display = 'none';
-            }, 5000);
-        }
-    }
-
-    closeBtn.onclick = function() {
-        welcomePopup.style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-        if (event.target == welcomePopup) {
+    
+        welcomeCloseBtn.onclick = function() {
             welcomePopup.style.display = 'none';
         }
-    }
-
-    showWelcomeMessage();
-});
+    
+        // Código para o popup do chatbot
+        const chatbotPopup = document.getElementById('chatbotPopup');
+        const chatbotCloseBtn = chatbotPopup.querySelector('.close');
+        const gotoChatbotBtn = document.getElementById('gotoChatbot');
+    
+        // Mostra o popup do chatbot após 3 segundos
+        setTimeout(() => {
+            chatbotPopup.style.display = 'block';
+        }, 3000);
+    
+        // Fecha o popup do chatbot quando clicar no X
+        chatbotCloseBtn.onclick = function() {
+            chatbotPopup.style.display = 'none';
+        }
+    
+        // Redireciona para a página do chatbot
+        gotoChatbotBtn.onclick = function() {
+            window.location.href = '/pages/chatbot/chat.html'; 
+        }
+    
+        // Função genérica para fechar popups quando clicar fora deles
+        window.onclick = function(event) {
+            if (event.target == welcomePopup) {
+                welcomePopup.style.display = 'none';
+            }
+            if (event.target == chatbotPopup) {
+                chatbotPopup.style.display = 'none';
+            }
+        }
+    
+        showWelcomeMessage();
+    });
     </script>
     
     <script src="script.js" defer></script>
