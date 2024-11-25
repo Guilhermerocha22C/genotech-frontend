@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Login bem-sucedido
                 localStorage.setItem('userData', JSON.stringify(data.user));
                 localStorage.setItem('userId', data.user.id); 
+                localStorage.setItem('justLoggedIn', 'true'); 
                 console.log('Dados do usuário após login:', data.user);
                 console.log('ID do usuário armazenado:', data.user.id);
                 window.location.href = '/index.html'; 
